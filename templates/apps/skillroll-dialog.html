@@ -1,0 +1,63 @@
+<form>
+    <div class="form-group">
+        <label>{{ localize "ARSDD.Ability" }}</label>
+        <div class="form-fields">
+            {{radioBoxes "ability" config.abilityAbbreviations checked=data.item.action.ability localize=true}}
+        </div>
+    </div>
+    <div class="form-group">
+        <label>{{ localize "ARSDD.Skills" }}2</label>
+        <select name="skill2">
+            {{#select data.item.action.skill2}}
+            <option value="-1"></option>
+            {{#each config.skills as |label s|}} 
+            <option value="{{s}}">{{ localize label }}</option>
+            {{/each}}
+            {{/select}}
+        </select>
+    </div>
+    <div class="form-group">
+        <label>{{ localize "ARSDD.RollSituationalBonus" }}</label>
+        <input type="text" name="bonus" value="{{data.options.bonus}}"/>
+    </div>
+    <div class="form-group">
+        <label>{{ localize "ARSDD.SpellLevel" }}</label>
+        <input type="text" name="level" value="{{data.item.action.level}}"/>
+    </div>    
+    <div class="form-group">
+        <label>{{ localize "ARSDD.DisasterDices" }}</label>
+        <input type="text" name="fumble" value="{{data.options.fumble}}" />
+    </div>
+
+    {{#if data.opposition}}
+    <div class="form-group">
+        <label>{{ localize "ARSDD.Defense" }}</label>
+    </div>
+    <div class="form-group">
+        <label>{{ localize "ARSDD.Ability" }}</label>
+        <div class="form-fields">
+            {{radioBoxes "passiveAbility" config.abilityAbbreviations checked=data.item.action.passiveAbility localize=true}}
+        </div>
+    </div>
+    <div class="form-group">
+        <label>{{ localize "ARSDD.Skills" }}</label>
+        <select name="passiveSkill">
+            {{#select data.item.passiveSkill}}
+            <option value=""></option>
+            {{#each config.skills as |label s|}} 
+            <option value="{{s}}">{{ localize label }}</option>
+            {{/each}}
+            {{/select}}
+        </select>
+    </div>
+    <div class="form-group">
+        <label>{{ localize "ARSDD.RollSituationalBonus" }}</label>
+        <input type="text" name="passiveBonus" value="{{data.options.passiveBonus}}"/>
+    </div>
+    {{/if}}
+
+    <div class="form-group">
+        <label>{{ localize "ARSDD.SpontaneousSpell" }}</label>
+        <input type="checkbox" name="spontaneous" />
+    </div>    
+</form>

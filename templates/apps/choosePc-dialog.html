@@ -1,0 +1,23 @@
+<form>
+    {{#if data.hasSkill}}
+    <div class="form-group">
+      <label>{{ localize "ARSDD.Skills" }}</label>
+      <select name="skillId">
+        {{#each config.skills as |label s|}} 
+        <option value="{{s}}">{{ localize label }}</option>
+        {{/each}}
+      </select>
+    </div>
+    {{/if}}
+    {{#if data.hasNumber1}}
+    <div class="form-group">
+      <label>{{ data.number1Label }}</label>
+      <input type="text" name="number1" data-dtype="Number"/>
+    </div>
+    {{/if}}
+    <div class="form-group">
+      {{#each data.pc as | actor a |}}
+        <input type="checkbox" name="names[]" value="{{actor.id}}" {{checked actor.here}}/>{{actor.name}}
+      {{/each}}
+    </div>
+</form>

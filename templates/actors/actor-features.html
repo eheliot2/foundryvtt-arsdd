@@ -1,0 +1,40 @@
+<ol class="items-list inventory-list">
+  {{#each sections as |section sid|}}
+    <ol class="item-list">
+      {{#each section.items as |item iid|}}
+        <li class="item flexrow" data-item-id="{{item._id}}">
+          <div class="item-name flexrow ">
+            <div class="item-image" style="background-image: url('{{item.img}}')"></div>
+            <div class="flexrow">
+              <div class="flex-c5">
+                <h4 class="item-edit rollable">
+                  {{item.name}}
+                  {{#if item.flags.isMultiple}} 
+                  (x{{item.system.learning.frequency}})
+                  {{/if}}
+                </h4>
+              </div>            
+              <div class="flex-3c5">
+                {{ concat item.sysem.description.value }}
+              </div>  
+              <div class="flex-c5">
+                {{#if item.flags.hasActiveEffect}}
+                {{#each item.flags.effectsActor as |effect e|}}
+                  {{#unless effect.flags.isPermanent}}
+                    <img class="item-image item-effect rollable {{effect.flags.class}}" src="{{effect.icon}}" data-item-id="{{effect.id}}" title="{{effect.label}}"/>
+                  {{/unless}}
+                {{/each}}
+              {{/if}}
+              </div>
+            </div>
+          </div>
+          <div class="item-controls flexrow">
+            {{#if item.flags.allowDelete}}
+              <a class="item-control item-delete" title='{{localize "ARSDD.ItemDelete"}}'><i class="fas fa-trash"></i></a>
+            {{/if}}
+          </div>
+        </li>
+      {{/each}}
+    </ol>
+  {{/each}}
+</ol>

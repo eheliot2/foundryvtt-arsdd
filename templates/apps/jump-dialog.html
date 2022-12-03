@@ -1,0 +1,23 @@
+<form>
+<p>Il n'y a pas besoin de jet pour </p>
+<ul>
+  <li>Sauter 1 trou de 1 case.</li>
+  <li>Sauter de 1 case (ou Tai -1) en hauteur en étant sur ses pieds si on a 2 cases d'élan, le saut coute 2 cases.</li>
+  <li>Sauter et s’accrocher à 2 cases, (ou Tai +1) en hauteur puis se hisser pour le reste de son mouvement si on a 2 case d'élan possible.</li>
+</ul>
+<p>Pour le reste il faut un jet</p>
+
+<div class="form-group">
+  <label>Type de saut : longueur</label>
+  <input type="radio" name="longJump" value="true" />
+  <label>hauteur</label>
+  <input type="radio" name="longJump" value="false" />
+</div>
+<div class="form-group">
+  Elan ? <input type="checkbox" name="runup"/>
+</div>
+<div class="form-group">
+  <label>Distance (en cases)</label>
+  <input type="text" name="number1" data-dtype="Number"/>
+</div>
+</form>

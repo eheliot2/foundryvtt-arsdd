@@ -1,0 +1,51 @@
+<form class="{{cssClass}} flexcol" autocomplete="off">
+
+    {{!-- Item Sheet Header --}}
+    {{> "systems/arsdd/templates/items/item-header.html"}}
+
+    {{!-- Item Sheet Navigation --}}
+    <nav class="sheet-navigation tabs" data-group="primary">
+        <a class="item active" data-tab="description">{{ localize "ARSDD.Description" }}</a>
+        {{#if flags.allowAction}}
+        <a class="item" data-tab="details">Action</a>
+        {{/if}}
+        {{#if flags.allowEffect}}
+        <a class="item" data-tab="effects">{{ localize "ARSDD.Effects" }}</a>
+        {{/if}}
+    </nav>
+
+    {{!-- Item Sheet Body --}}
+    <section class="sheet-body">
+
+        {{!-- Description Tab --}}
+        <div class="tab active" data-group="primary" data-tab="description">
+            {{> "systems/arsdd/templates/items/item-description.html"}}
+            {{#if flags.isPhysical}}
+            <hr>
+            {{> "systems/arsdd/templates/items/item-description-physical.html"}}
+            {{/if}}
+            <h4 class="form-header">Description & notes</h4>
+            {{editor descriptionHTML target="system.description.value" button=true editable=editable engine="prosemirror" collaborate=false}}
+        </div>
+
+        {{!-- action Tab --}}
+        {{#if flags.allowAction}}
+        <div class="tab details" data-group="primary" data-tab="details">
+            {{> "systems/arsdd/templates/items/item-action.html"}}
+        </div>
+        {{/if}}
+
+        {{!-- Effects Tab --}}
+        {{#if flags.allowEffect}}
+        <div class="tab effects" data-group="primary" data-tab="effects">
+            {{#if flags.allowAction}}
+                {{> "systems/arsdd/templates/items/item-damage.html"}}
+            {{/if}}
+            
+            <h4 class="form-header">Effets actifs</h4>
+            {{> "systems/arsdd/templates/effect/active-effects.html"}}
+
+        </div>
+        {{/if}}
+    </section>
+</form>

@@ -1,0 +1,233 @@
+<form autocomplete="off">
+  <!-- Effect Header -->
+  <header class="sheet-header">
+    <img class="effect-icon" src="{{ effect.icon }}" title="{{ effect.label }}" data-edit="icon">
+    <h1 class="effect-title"> 
+      <input type="text" name="label" value="{{ effect.label }}"/>
+    </h1>
+
+  </header>
+
+  <!-- Effect Configuration Tabs -->
+  <nav class="sheet-tabs tabs">
+    <a class="item" data-tab="details"><i class="fas fa-book"></i> {{localize "EFFECT.TabDetails"}}</a>
+    <a class="item" data-tab="effects"><i class="fas fa-cogs"></i> {{localize "EFFECT.TabEffects"}}</a>
+    {{#if effect.flags.enableAutomation}}
+      <a class="item" data-tab="conditions"><i class="fas fa-cogs"></i>Automatisation</a>
+    {{/if}}
+  </nav>
+
+    <!-- Details Tab -->
+  <section class="tab" data-tab="details">
+    <div class="form-group">
+      <label>{{ localize "EFFECT.Icon" }}</label>
+        <div class="form-fields">
+          {{filePicker target="icon" type="image"}}
+          <input class="image" type="text" name="icon" placeholder="path/image.png" value="{{effect.icon}}"/>
+        </div>
+    </div>
+    <h2 >Utilisation</h2>
+    <div class="form-group">  
+      <label>Activer/désactiver autorisé ?</label>
+      <input type="checkbox" name="flags.allowDisable" {{ checked effect.flags.allowDisable }}/>   
+      <label>Désactivé ?</label>
+      <input type="checkbox" name="disabled" {{ checked effect.disabled }}/>  
+    </div>
+    <div class="form-group">
+      <label>Supprimé autorisé ?</label>
+      <input type="checkbox" name="flags.allowDelete" {{ checked effect.flags.allowDelete }}/>   
+      <label>Effet sur soi-même ?</label>
+      <input type="checkbox" name="flags.isSelfTarget" {{ checked effect.flags.isSelfTarget }}/>
+    </div>
+    <div class="form-group">
+      <label>Automatisation autorisée ?</label>
+      <input type="checkbox" name="flags.enableAutomation" {{ checked effect.flags.enableAutomation }}/>
+    </div>
+    <h2>Durée</h2>
+    <div class="form-group">
+      <label>Permanent ?</label>
+      <input type="checkbox" name="flags.isPermanent" {{ checked effect.flags.isPermanent }}/>
+    </div>
+    {{#unless effect.flags.isPermanent}}
+    <div class="form-group">
+      <label>Durée longue ?</label>
+      <input type="checkbox" name="flags.isTemporary" {{ checked effect.flags.isTemporary }}/>
+    </div>
+      {{#if effect.flags.isTemporary}}
+        <div class="form-group">
+          <label>Durée longue</label>
+          <div class="form-fields">
+            <select name="flags.duration">
+              <option value=""></option>
+              {{selectOptions config.effectDuration selected=effect.flags.duration}}
+            </select>
+          </div>
+        </div>
+      {{else}}
+        <div class="form-group">
+          <label>Sinon Durée en rounds)</label>
+          <div class="form-fields">
+            <input type="number" name="duration.rounds" value="{{ effect.duration.rounds }}"/>
+            <button type="button" class="reset-duration"><i class="fas fa-clock" title="Reset durée"></i></button>
+            A démarré {{ effect.duration.startRound }}
+          </div>
+        </div>
+      {{/if}}
+    {{/unless}}
+    <h2>Aura</h2>
+    <div class="form-group">  
+      <label>Source d'Aura ?</label>
+      <input type="checkbox" name="flags.isSourceAura" {{ checked effect.flags.isSourceAura }}/>   
+      {{#if effect.flags.isSourceAura }}
+          <label>Source d'Aura désactivée ?</label>
+          <input type="checkbox" name="flags.disabledAura" {{ checked effect.flags.disabledAura }}/>  
+        </div>
+        <div class="form-group">
+          <input class="color" type="text" value="{{effect.flags.fillColorAura}}" name="flags.fillColorAura">
+          <input type="color" value="{{effect.flags.fillColorAura}}" data-edit="flags.fillColorAura">
+        </div>
+        <div class="form-group">
+          <label>Opacité</label>
+          <input type="range" name="flags.opacityAura" value="{{effect.flags.opacityAura}}" min="0" max="1" step="0.05"/>
+        </div>
+        <div class="form-group">
+          <label>Texture</label>
+          <div class="form-fields">
+            {{filePicker target="flags.textureAura" type="image"}}
+            <input class="image" type="text" name="flags.textureAura" placeholder="path/image.png" value="{{effect.flags.textureAura}}"/>
+          </div>
+        </div>
+      {{else}}
+        </div>
+      {{/if}}
+    </div>
+  </section>
+
+    <!-- Effects Tab -->
+  <section class="tab" data-tab="effects">
+    <header class="effect-change effects-header flexrow">
+        <div class="key">{{ localize "EFFECT.ChangeKey" }}</div>
+        <div class="mode">{{ localize "EFFECT.ChangeMode" }}</div>
+        <div class="value">{{ localize "EFFECT.ChangeValue" }}</div>
+        <div class="effect-controls">
+            <a class="effect-control" data-action="add"><i class="far fa-plus-square"></i></a>
+        </div>
+    </header>
+    <ol class="changes-list">
+      {{#each effect.changes as |change i|}}
+        <li class="effect-change flexrow" data-index="{{i}}">
+          <div class="key">
+            <select name="changes.{{i}}.key">
+              {{selectOptions ../config.effectProperties  selected=change.key}}
+            </select>
+          </div>
+          <div class="mode">
+            <select name="changes.{{i}}.mode" data-dtype="Number">
+              {{selectOptions ../modes selected=change.mode}}
+            </select>
+          </div>
+          <div class="value">
+            <input type="text" name="changes.{{i}}.value" value="{{change.value}}"/>
+          </div>
+          <div class="effect-controls">
+            <a class="effect-control" data-action="delete"><i class="fas fa-trash"></i></a>
+          </div>
+        </li>
+      {{/each}}
+    </ol>
+
+    <div class="form-group stacked">
+      <label>Traits spéciaux (débute par trait_ et séparé par ;) </label>
+      <input type="text" name="flags.traits" value="{{effect.flags.traits}}" data-dtype="String"/>
+      <label>Liste des traits prédéfinis : {{ listeTrait }}. Vous pouvez aussi mettre n'importe quelle étiquette.</label>
+    </div>
+  </section>
+
+  {{#if effect.flags.enableAutomation}}
+    <section class="tab" data-tab="conditions">
+      <i>L'effet doit être activé. Les conditions non remplies désactiveront l'effet temporairement. Si il y a plusieurs opposants, aucun test de condition sur opposant n'est effectué.<br></i>
+      <h2>Utilisation</h2>
+      <div class="form-group">
+        <label>Supprimé si désactivé ?</label>
+        <input type="checkbox" name="flags.deleteOnExpiration" {{ checked effect.flags.deleteOnExpiration }}/>
+        <label>Activé sur défense ratée (début tour)</label>
+        <input type="checkbox" name="flags.applyIfNoDefense" {{ checked effect.flags.applyIfNoDefense }}/>
+      </div>
+      <div class="form-group">
+          <label>Réactivé au début du prochain tour ?</label>
+          <input type="checkbox" name="flags.enabledNextTurn" {{ checked effect.flags.enabledNextTurn }}/>
+          <label>Défense ultérieure</label>
+          <input type="checkbox" name="flags.laterDefense" {{ checked effect.flags.laterDefense }}/>
+      </div>
+      <div class="form-group">
+        <label>Utilisable une fois sur jet de compétence ?</label>
+        <input type="checkbox" name="flags.disabledAfterSkillRoll" {{ checked effect.flags.disabledAfterSkillRoll }}/>
+        <label>Utilisable une fois sur jet d'effet ?</label>
+        <input type="checkbox" name="flags.disabledAfterDamageRoll" {{ checked effect.flags.disabledAfterDamageRoll }}/>
+      </div>  
+      <h2>Conditions sur le personnage bénéficiaire de l'effet</h2>
+      <h3><b>Sur les états</b></h3>
+      <div class="form-fields">
+        {{#each config.effectConditions as |name prop|}}
+          <label class="checkbox">
+            <input type="checkbox" name="flags.conditionsParentStatus.{{prop}}" {{checked (lookup ../effect.flags.conditionsParentStatus prop)}}/> {{ name }}
+          </label>
+        {{/each}}
+      </div>
+      <i>Effet activé si tous les cochés présents</i><br><br>
+      <h2>Conditions sur l'action en cours</h2>
+      <h3><b>Sur le type d'action</b></h3>
+      <div class="form-fields">      
+        {{#each config.itemActionTypes as |name prop|}}
+          <label class="checkbox">
+            <input type="checkbox" name="flags.conditionsAction.{{prop}}" {{checked (lookup ../effect.flags.conditionsAction prop)}}/> {{ name }}
+          </label>
+        {{/each}}
+      </div>  
+      <h3><b>Sur le type de dégat</b></h3>    
+      <div class="form-fields">      
+        {{#each config.damageTypes as |name prop|}}
+          <label class="checkbox">
+            <input type="checkbox" name="flags.conditionsDamage.{{prop}}" {{checked (lookup ../effect.flags.conditionsDamage prop)}}/> {{ name }}
+          </label>
+        {{/each}}
+      </div>    
+      <i>Effet activé si au moins un coché présent</i><br><br>
+
+      <h2>Conditions sur l'opposant dans l'action</h2>
+      <h3><b>Sur les états</b></h3>
+      <div class="form-fields">
+        {{#each config.effectConditions as |name prop|}}
+          <label class="checkbox">
+            <input type="checkbox" name="flags.conditionsTargetStatus.{{prop}}" {{checked (lookup ../effect.flags.conditionsTargetStatus prop)}}/> {{ name }}
+          </label>
+        {{/each}}
+      </div>
+      <i>Effet activé si tous les cochés présents</i><hr>
+      <h3><b>Sur le groupe de race</b></h3>
+      <div class="form-fields">
+        {{#each config.groupRaces as |name prop|}}
+          <label class="checkbox">
+            <input type="checkbox" name="flags.conditionsTargetRace.{{prop}}" {{checked (lookup ../effect.flags.conditionsTargetRace prop)}}/> {{ name }}
+          </label>
+        {{/each}}
+      </div>
+      <i>Effet activé si au moins un coché présent</i><hr>
+      <h3><b>Sur les Traits spéciaux</b></h3>
+      <div class="form-fields">
+        <input type="text" name="flags.conditionsTargetTrait" value="{{effect.flags.conditionsTargetTrait}}" data-dtype="String"/>
+      </div>
+      <i>séparé par ; et effet activé si tous présents<br>
+      Liste des traits prédéfinis : 
+      {{#each config.effectTrait as |value key|}}
+        <span title="{{value}}">{{key}}</span>
+      {{/each}}
+      
+      . Vous pouvez aussi mettre n'importe quelle étiquette</i>
+    </section>
+  {{/if}}
+
+  <footer class="sheet-footer">
+    <button type="submit"><i class="fas fa-save"></i> {{localize submitText}}</button>
+  </footer>
+</form>

@@ -1,0 +1,207 @@
+<form class="{{cssClass}} flexcol" autocomplete="off">
+
+    {{!-- Sheet Header --}}
+    <header class="sheet-header flexrow">
+        <img class="profile" src="{{actor.img}}" title="{{actor.name}}" data-edit="img"/>
+
+        <section class="header-details flexrow">
+            <h1 class="charname">
+                <input name="name" type="text" value="{{actor.name}}" placeholder="{{ localize 'ARSDD.Name' }}"/>
+            </h1>
+
+            <aside class="header-icon flexrow">
+            {{#each icon as |ic id|}}
+                <img class="icon {{ic.class}} " title="{{ic.title}}" src="{{ic.img}}">
+            {{/each}}
+            </aside>
+
+
+            {{!-- Ability Scores --}}
+            <ul class="attributes flexrow">
+            {{#each system.abilities as |ability id|}}
+                <li class="attribute" data-ability="{{id}}">
+                    <h4 class="attribute-name box-title">{{ability.label}}</h4>
+                    <div class="attribute-value">
+                        <input name="system.abilities.{{id}}.value" type="number" value="{{ability.value}}" placeholder="0"/>
+                    </div>
+                </li>
+            {{/each}}
+                <li class="attribute">
+                    <h4 class="attribute-name box-title">{{localize "ARSDD.Size"}}</h4>
+                    <div class="attribute-value">
+                        <input name="system.attributes.size" type="number" value="{{system.attributes.size}}" placeholder="0"/>
+                    </div>
+                </li>
+            </ul>
+
+            {{!-- Header Attributes --}}
+            <ul class="attributes flexrow">
+                <li class="attribute">
+                    <h4 class="attribute-name box-title">{{ localize "ARSDD.HitPoints" }}</h4>
+                    <div class="attribute-value multiple">
+                        <input name="system.attributes.hp.value" type="text" value="{{system.attributes.hp.value}}" data-dtype="Number"/>
+                        <span class="sep"> / </span>
+                        <input name="system.attributes.hp.max" type="text" value="{{system.attributes.hp.max}}" {{#if flags.isPC}} disabled {{/if}} data-dtype="Number"/>
+                    </div>
+                    <footer class="attribute-footer">
+                        Tmp <input name="system.attributes.hp.temp" type="text" class="temphp" value="{{system.attributes.hp.temp}}" data-dtype="Number"/>
+                    </footer>
+                </li>
+                <li class="attribute health">
+                    <h4 class="attribute-name box-title">{{ localize "ARSDD.ManaPoints" }}</h4>
+                    <div class="attribute-value multiple">
+                        <input name="system.attributes.mp.value" type="text" value="{{system.attributes.mp.value}}" data-dtype="Number"/>
+                        <span class="sep"> / </span>
+                        <input name="system.attributes.mp.max" type="text" value="{{system.attributes.mp.max}}" {{#if flags.isPC}} disabled {{/if}} data-dtype="Number"/>
+                    </div>
+                    <footer class="attribute-footer">
+                        Tmp <input name="system.attributes.mp.temp" type="text" class="temphp" value="{{system.attributes.mp.temp}}" data-dtype="Number"/>
+                    </footer>
+                </li>
+           </ul>
+            {{!-- Header Attributes --}}
+        </section>
+    </header>
+
+    {{!-- Character Sheet Navigation --}}
+    <nav class="sheet-navigation tabs" data-group="primary">
+        <a class="item active" data-tab="skills">{{ localize "ARSDD.Skills" }}</a>
+        <a class="item" data-tab="attributes">Carac</a>
+        <a class="item" data-tab="features">{{ localize "ARSDD.Features" }}</a>
+        <a class="item" data-tab="spellbook">{{ localize "ARSDD.Spellbook" }}</a>
+        <a class="item" data-tab="inventory">{{ localize "ARSDD.Inventory" }}</a>
+        <a class="item" data-tab="effects">{{ localize "ARSDD.Effects" }}</a>
+        {{#unless flags.isPC}}
+        <a class="item" data-tab="npc">PNJ</a>
+        <a class="item" data-tab="biography">Bio</a>        
+        {{/unless}}
+     </nav>
+
+    {{!-- Character Sheet Body --}}
+    <section class="sheet-body">
+        {{!-- skills Tab --}}
+        <div class="tab skills flexrow" data-group="primary" data-tab="skills">
+            <ul class="skills-list">
+                <li class="skill flexrow">
+                    <h4 class="skill-name"><b>{{ localize "ARSDD.Skills" }}</b></h4>
+                    <span class="skill-mod"><b>Sc</b></span>
+                    <span class="skill-mod"><b>Rk</b></span>
+                    <span class="skill-mod"><b>PX</b></span>
+                </li>
+            {{#each system.skills as |skill s|}}
+                {{#if display}}
+                {{#if isCol1 }}          
+                <li class="skill flexrow" data-skill="{{s}}">
+                    <h4 class="skill-name rollable">
+                    {{#if isRenamed}}{{skill.label2}}
+                    {{else}}{{skill.label}}
+                    {{/if}}
+                    {{#if isBonus}} <b>({{skill.bonus}})</b>
+                    {{/if}}
+                    {{#if isBase}} ({{skill.base}}px)
+                    {{/if}}
+                    </h4>
+                    <span class="skill-mod"><input type="text" name="system.skills.{{s}}.value" value="{{skill.value}}" data-dtype="Number"/></span>
+                    <span class="skill-mod"><input type="text" name="system.skills.{{s}}.rank" value="{{skill.rank}}" data-dtype="Number" disabled/></span>
+                    <span class="skill-mod"><input type="text" name="system.skills.{{s}}.xp" value="{{skill.xp}}" data-dtype="Number"/></span>
+                </li>
+                {{/if}}
+                {{/if}}
+            {{/each}}
+            </ul>              
+            <ul class="skills-list">
+                <li class="skill flexrow">
+                    <h4 class="skill-name"><b>{{ localize "ARSDD.Skills" }}</b></h4>
+                    <span class="skill-mod"><b>Sc</b></span>
+                    <span class="skill-mod"><b>Rk</b></span>
+                    <span class="skill-mod"><b>PX</b></span>
+                </li>
+            {{#each system.skills as |skill s|}}              
+                {{#if display}}
+                {{#if isCol2 }} 
+                <li class="skill flexrow" data-skill="{{s}}">
+                    <h4 class="skill-name rollable">
+                    {{#if isRenamed}}{{skill.label2}}
+                    {{else}}{{skill.label}}
+                    {{/if}}
+                    {{#if isBonus}} <b>({{skill.bonus}})</b>
+                    {{/if}}
+                    {{#if isBase}} ({{skill.base}}px)
+                    {{/if}}
+                    </h4>   
+                    <span class="skill-mod"><input type="text" name="system.skills.{{s}}.value" value="{{skill.value}}" data-dtype="Number"/></span>
+                    <span class="skill-mod"><input type="text" name="system.skills.{{s}}.rank" value="{{skill.rank}}" data-dtype="Number" disabled/></span>
+                    <span class="skill-mod"><input type="text" name="system.skills.{{s}}.xp" value="{{skill.xp}}" data-dtype="Number"/></span>
+                </li>
+                {{/if}}
+                {{/if}}
+            {{/each}}
+
+            </ul>              
+            <ul class="skills-list">
+                <li class="skill flexrow">
+                    <h4 class="skill-name"><b>{{ localize "ARSDD.Skills" }}</b></h4>
+                    <span class="skill-mod"><b>Sc</b></span>
+                    <span class="skill-mod"><b>Rk</b></span>
+                    <span class="skill-mod"><b>PX</b></span>
+                </li>
+            {{#each system.skills as |skill s|}}              
+                {{#if display}}
+                {{#if isCol3 }} 
+                    <li class="skill flexrow" data-skill="{{s}}">
+                        <h4 class="skill-name rollable">
+                        {{#if isRenamed}}{{skill.label2}}
+                        {{else}}{{skill.label}}
+                        {{/if}}
+                        {{#if isBonus}} <b>({{skill.bonus}})</b>
+                        {{/if}}
+                        {{#if isBase}} ({{skill.base}}px)
+                        {{/if}}
+                        </h4>                        
+                        <span class="skill-mod"><input type="text" name="system.skills.{{s}}.value" value="{{skill.value}}" data-dtype="Number"/></span>
+                        <span class="skill-mod"><input type="text" name="system.skills.{{s}}.rank" value="{{skill.rank}}" data-dtype="Number" disabled/></span>
+                        <span class="skill-mod"><input type="text" name="system.skills.{{s}}.xp" value="{{skill.xp}}" data-dtype="Number"/></span>
+                    </li>
+                {{/if}}
+                {{/if}}
+            {{/each}}
+            </ul>
+            <a class="config-button" data-action="skills" title=""><i class="fas fa-cog"></i></a>
+            <p>total px {{system.attributes.skillXp}}</p>
+        </div>
+            
+        <div class="tab attributes flexrow" data-group="primary" data-tab="attributes">
+            {{> "systems/arsdd/templates/actors/actor-traits.html" sections=attributes}}
+        </div>
+        
+        {{!-- Inventory Tab --}}
+        <div class="tab inventory flexcol" data-group="primary" data-tab="inventory">
+            {{> "systems/arsdd/templates/actors/actor-inventory.html" sections=inventory}}
+        </div>
+
+        {{!-- Features Tab --}}
+        <div class="tab features flexcol" data-group="primary" data-tab="features">
+            {{> "systems/arsdd/templates/actors/actor-features.html" sections=features}}
+        </div>
+
+        {{!-- Spellbook Tab --}}
+        <div class="tab spellbook flexcol" data-group="primary" data-tab="spellbook">
+            {{> "systems/arsdd/templates/actors/actor-spellbook.html"}}
+        </div>
+
+        {{!-- Effects Tab --}}
+        <div class="tab effects flexcol" data-group="primary" data-tab="effects">
+            {{> "systems/arsdd/templates/effect/active-effects.html"}}
+        </div>
+
+        {{#unless flags.isPC}}
+        <div class="tab npc flexcol" data-group="primary" data-tab="npc">
+            {{> "systems/arsdd/templates/actors/actor-npc.html"}}
+        </div>
+
+        <div class="tab biography flexcol" data-group="primary" data-tab="biography">
+          {{editor biographyHTML target="system.biography.value" button=true editable=editable engine="prosemirror" collaborate=false}}
+        </div>
+        {{/unless}}
+    </section>
+</form>

@@ -1,0 +1,19 @@
+<form autocomplete="off">
+    <p class="notes">{{localize "ARSDD.SkillsConfigHint"}}</p>
+    {{#each skills as |skill s|}}    
+    <div class="form-group" data-skill="{{s}}">
+        <input type="checkbox" name="system.skills.{{s}}.display" {{checked skill.display}}/>
+        <label>{{skill.label}} : Base</label>
+        <input type="text" name="system.skills.{{s}}.base" value="{{skill.base}}" data-dtype="Number"/>
+        {{#if skill.allowinit}}
+        <label>Init</label>
+        <input type="radio" name="system.attributes.init.skill" value="{{s}}" {{#if skill.init}}checked{{/if}} />
+        {{/if}}
+        {{#if skill.rename}}
+        <label>{{localize "ARSDD.Rename"}}</label>
+        <input type="text" name="system.skills.{{s}}.label2" value="{{skill.label2}}"/>
+        {{/if}}
+    </div>
+    {{/each}}
+    <button type="submit" name="submit" value="1"><i class="far fa-save"></i> {{ localize "Submit"}}</button>
+</form>

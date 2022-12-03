@@ -1,0 +1,34 @@
+{{!-- Damage Formula --}}
+<div>
+    <h4 class="form-header">
+        {{ localize "ARSDD.Damage" }} / {{ localize "ARSDD.Healing" }}
+        <a class="damage-control add-damage"><i class="fas fa-plus"></i></a>
+    </h4>
+    <ol class="damage-parts form-group">
+        {{#each system.action.damage.parts as |part i| }}
+        <li class="damage-part flexrow" data-damage-part="{{i}}">
+            <input type="text" name="system.action.damage.parts.{{i}}.0" value="{{lookup this "0"}}"/>
+            <select name="system.action.damage.parts.{{i}}.1">
+                {{#select (lookup this "1") }}
+                <option value="">{{ localize "ARSDD.None" }}</option>
+                {{#each ../config.damageTypes as |name type|}}
+                <option value="{{type}}">{{name}}</option>
+                {{/each}}
+                {{#each ../config.healingTypes as |name type|}}
+                <option value="{{type}}">{{name}}</option>
+                {{/each}}
+                {{/select}}
+            </select>
+            <a class="damage-control delete-damage"><i class="fas fa-minus"></i></a>
+        </li>
+        {{/each}}
+    </ol>
+
+    {{!-- Other Formula --}}
+    <div class="form-group">
+        <label>{{ localize "ARSDD.OtherFormula" }}</label>
+        <div class="form-fields">
+            <input type="text" name="system.action.formula" value="{{system.action.formula}}" placeholder="{{ localize 'ARSDD.Formula' }}"/>
+        </div>
+    </div>
+</div>

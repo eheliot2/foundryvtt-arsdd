@@ -1,0 +1,74 @@
+<diV>
+  {{#if flags.isActor}}
+    <div class="effects-filters flexrow">
+        <ul class="filter-list flexrow" data-filter="effects">
+            <li class="filter-item" data-filter="feat">{{localize "ARSDD.Features"}}</li>
+            <li class="filter-item" data-filter="equipement">{{localize "ARSDD.Inventory"}}</li>
+            <li class="filter-item" data-filter="spell">{{localize "ARSDD.Spell"}}</li>
+            <li class="filter-item" data-filter="character">{{localize "ARSDD.Target"}}</li>
+        </ul>
+    </div>
+  {{/if}}
+  <ol class="items-list effects-list">
+    {{#each effects as |section sid|}}
+      <li class="items-header flexrow" data-effect-type="{{section.type}}">
+        <h3 class="item-name effect-name flexrow">{{localize section.label}}</h3>
+        <div class="effect-source">Source</div>
+        <div class="effect-source">Duration</div>
+
+        <div class="item-controls effect-controls flexrow">
+
+            <a class="effect-control" data-action="create" title="{{localize 'ARSDD.EffectCreate'}}">
+              <i class="fas fa-plus"></i> {{localize "ARSDD.Add"}}
+            </a>
+
+        </div>
+      </li>
+
+      <ol class="item-list">
+        {{#each section.effects as |effect|}}
+          <li class="item effect flexrow" data-effect-id="{{effect.id}}">
+            <div class="item-name effect-name flexrow">
+              <img class="item-image" src="{{effect.icon}}"/>
+              <h4 class="effect-control rollable" data-action="edit">{{effect.label~}}</h4>
+            </div>
+            <div class="effect-source">{{effect.labelInfo}}</div>
+            <div class="effect-duration">
+              {{effect.labelDuration}}
+            </div>
+            <div class="item-controls effect-controls flexrow">
+              {{#if effect.flags.isSourceAura}}     
+                {{#if effect.flags.disabledAura}}               
+                  <a class="effect-control" data-action="toggleAura" title="{{localize 'ARSDD.EffectToggleAuraDeactivated'}}">
+                    <img src="systems/arsdd/icons/svg/aura.svg" style="border:none;"/>
+                  </a>
+                {{else}}
+                  <a class="effect-control" data-action="toggleAura" title="{{localize 'ARSDD.EffectToggleAuraActivated'}}">
+                    <img src="systems/arsdd/icons/svg/aura-black.svg" style="border:none;"/>
+                  </a>
+                {{/if}}
+              {{/if}}                  
+              {{#if effect.flags.allowDisable}}   
+                {{#if effect.disabled}}
+                  <a class="effect-control" data-action="toggle" title="{{localize 'ARSDD.EffectToggleDeactivated'}}">
+                    <i class="fas fa-times"></i>
+                  </a>
+                {{else}}
+                  <a class="effect-control" data-action="toggle" title="{{localize 'ARSDD.EffectToggleActivated'}}">
+                    <i class="fas fa-check"></i>
+                  </a>
+                {{/if}}
+
+              {{/if}}
+              {{#if effect.flags.allowDelete}}
+                <a class="effect-control" data-action="delete" title="{{localize 'ARSDD.EffectDelete'}}">
+                  <i class="fas fa-trash"></i>
+                </a>
+              {{/if}}
+            </div>
+          </li>
+        {{/each}}
+      </ol>
+    {{/each}}
+  </ol>
+</diV>

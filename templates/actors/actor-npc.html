@@ -1,0 +1,46 @@
+<div class="trait">
+    <div class="">
+        <h2>Bonus attaque</h2>
+        <div class="form-groups flexrow stacked">
+            {{#each system.effectAttributes.attack as |atk a|}}
+            <div class="form-fields flex-c4 flexrow">
+                <label class="flex-c3">{{a}}</label>
+                <input class="flex-2c3" type="text" name="system.effectAttributes.attack.{{a}}" value="{{atk}}" data-dtype="Number"/> 
+            </div>
+            {{/each}}
+        </div>
+    </div>
+    <div class="flex-c4">
+        <h2>Bonus défense</h2>
+        <div class="form-groups flexrow stacked">
+            {{#each system.effectAttributes.defense as |atk a|}}
+            <div class="form-fields flex-c4 flexrow">
+                <label class="flex-c3">{{a}}</label>
+                <input class="flex-2c3" type="text" name="system.effectAttributes.defense.{{a}}" value="{{atk}}" data-dtype="Number"/> 
+            </div>
+            {{/each}}
+        </div>
+    </div>
+    <div class="flex-c4">
+        <h2>Armure</h2>
+        <div class="form-groups flexrow stacked">
+            {{#each system.effectAttributes.armor as |atk a|}}
+            <div class="form-fields flex-c4 flexrow">
+                <label class="flex-c3">{{a}}</label>
+                <input class="flex-2c3" type="text" name="system.effectAttributes.armor.{{a}}" value="{{atk}}" data-dtype="Number"/> 
+            </div>
+            {{/each}}
+        </div>
+    </div>
+    <div class="flex-c4">
+        <h2>Résistance</h2>
+        <div class="form-groups flexrow stacked">
+            {{#each system.effectAttributes.resistance as |atk a|}}
+            <div class="form-fields flex-c4 flexrow">
+                <label class="flex-c3">{{a}}</label>
+                <input class="flex-2c3" type="text" name="system.effectAttributes.resistance.{{a}}" value="{{atk}}" data-dtype="Number"/> 
+            </div>
+            {{/each}}
+        </div>
+    </div>
+</div>      

@@ -1,0 +1,210 @@
+{{!-- Action Type --}}
+<h4 class="form-header">{{ localize "ARSDD.ItemActionType" }}</h4>
+<div class="form-group select">
+    <label>{{ localize "ARSDD.ItemActionRoll" }}</label>
+    <select name="system.action.actionType">
+        {{#select system.action.actionType}}
+        <option value=""></option>
+        {{#each config.itemActionTypes as |name type|}}
+        <option value="{{type}}">{{name}}</option>
+        {{/each}}
+        {{/select}}
+    </select>
+</div>
+
+{{#if flags.hasAction}}
+<div class="form-group flexrow">
+    <div class="form-group flex-c5">
+        <label>{{ localize "ARSDD.ItemAttackBonus" }}</label>
+        <div class="form-fields">
+            <input type="text" name="system.action.attackBonus" value="{{system.action.attackBonus}}"/>
+        </div>
+    </div>
+</div>
+<div class="form-group">
+    <label>{{ localize "ARSDD.Ability" }}</label>
+    {{radioBoxes "system.action.ability" config.abilityAbbreviations checked=system.action.ability localize=true}}
+ </div>
+<div class="form-group">
+    <div class="form-group flex-c4">
+        <label>{{ localize "ARSDD.Skills" }}1</label>
+        <select name="system.action.skill1">
+            {{#select system.action.skill1}}
+            <option value=""></option>
+            {{#each config.skills as |label s|}} 
+            <option value="{{s}}">{{ localize label }}</option>
+            {{/each}}
+            {{/select}}
+        </select>
+    </div>
+    <div class="form-group flex-c4">
+        <label>{{ localize "ARSDD.Skills" }}2</label>
+        <select name="system.action.skill2">
+            {{#select system.action.skill2}}
+            <option value=""></option>
+            {{#each config.skills as |label s|}} 
+            <option value="{{s}}">{{ localize label }}</option>
+            {{/each}}
+            {{/select}}
+        </select>
+    </div>
+</div>
+
+{{!-- defense --}}
+    {{#if flags.hasSpecificDefense}}
+<h4 class="form-header">{{ localize "ARSDD.Defense" }}</h4>
+<div class="form-group input-select">
+    <div class="form-fields">
+        <label>{{ localize "ARSDD.Ability" }}</label>
+        <div class="form-fields">
+            {{radioBoxes "system.action.passiveAbility" config.abilityAbbreviations checked=system.action.passiveAbility localize=true}}
+        </div>
+    </div>
+    <div class="form-fields">
+        <label>{{ localize "ARSDD.Skills" }}</label>
+        <div class="form-fields">
+            <select name="action.passiveSkill">
+                {{#select system.action.passiveSkill}}
+                <option value=""></option>
+                {{#each config.skills as |label s|}} 
+                <option value="{{s}}">{{ localize label }}</option>
+                {{/each}}
+                {{/select}}
+            </select>
+        </div>  
+    </div>
+</div>
+    {{/if}}
+{{/if}}
+
+
+{{!-- Activation Cost --}}
+{{#if flags.allowActivation}}
+<h3 class="form-header">{{ localize "ARSDD.ActionParameters" }}</h3>
+<div class="form-group input-select">
+    <label>{{ localize "ARSDD.Action" }}</label>
+    <div class="form-fields">
+        <select name="system.action.activation">
+            {{#select system.action.activation}}
+            <option value=""></option>
+            {{#each config.activationTypes as |name key|}}
+            <option value="{{key}}">{{name}}</option>
+            {{/each}}
+            {{/select}}
+        </select>
+    </div>
+</div>
+{{/if}}
+{{#if flags.hasActivation}}
+<div class="form-group flexrow">
+    <div class="form-group flex-c2">
+        <label>{{ localize "ARSDD.Delay" }}</label>
+        <input type="text" name="system.action.delay" value="{{system.action.delay}}" data-dtype="Number"/>
+    </div>
+
+    {{!-- Effect Duration --}}
+    <div class="form-group input-select flex-c2">
+        <label>{{ localize "ARSDD.Duration" }}</label>
+        <select name="system.action.duration.units">
+            {{#select system.action.duration.units}}
+            <option value=""></option>
+            {{#each config.duration as |name key|}}
+            <option value="{{key}}">{{name}}</option>
+            {{/each}}
+            {{/select}}
+        </select>
+        {{#if flags.isRound}}
+        <input type="text" name="system.action.duration.value" value="{{system.action.duration.value}}" data-dtype="Number" placeholder="-"/>
+        {{/if}}
+        {{#if flags.allowConcentration}}
+        <label class="checkbox">
+            <input type="checkbox" name="system.action.duration.concentration" {{checked system.action.duration.concentration}}/> {{ localize "ARSDD.Concentration" }}
+        </label>
+        {{/if}}
+    </div>
+
+    {{!-- Ability Range --}}
+    <div class="form-group input-select flex-c2">
+        <label>{{ localize "ARSDD.Range" }}</label>
+        <select name="system.action.range.units">
+            {{#select system.action.range.units}}
+            <option value=""></option>
+            {{#each config.distanceUnits as |name key|}}
+            <option value="{{key}}">{{name}}</option>
+            {{/each}}
+            {{/select}}
+        </select>
+        {{#if flags.isCase}}
+        <input type="text" name="system.action.range.value" value="{{system.action.range.value}}" data-dtype="Number" placeholder="{{ localize 'ARSDD.Normal' }}"/>
+        <input type="checkbox" name="system.action.range.long" {{checked system.action.range.long}}/> {{ localize "ARSDD.Max" }}
+        {{/if}}
+    </div>
+
+    {{!-- Ability Target --}}
+    <div class="form-group input-select-select flex-c2">
+        <label>{{ localize "ARSDD.Target" }}</label>
+        <select name="system.action.target.type">
+            {{#select system.action.target.type}}
+            <option value=""></option>
+            {{#each config.targetTypes as |name key|}}
+            <option value="{{key}}">{{name}}</option>
+            {{/each}}
+            {{/select}}
+        </select>
+        {{#if flags.hasArea}}
+        <input type="text" name="system.action.target.value" value="{{system.action.target.value}}" data-dtype="Number" placeholder="-"/><label>{{ localize "ARSDD.DistCase" }}</label>
+        {{/if}}
+        {{#if   flags.isLine}}
+        <input type="text" name="system.action.target.width" value="{{system.action.target.width}}" data-dtype="Number" placeholder="-"/><label>{{ localize "ARSDD.TargetWidth" }}</label>
+        {{/if}}
+    </div>
+
+    {{!-- Limited Uses --}}
+    <div class="form-group uses-per">
+        <label>{{ localize "ARSDD.LimitedUses" }}</label>
+        <input type="text" name="system.action.uses.value" value="{{system.action.uses.value}}" data-dtype="Number"/>
+        <span class="sep">{{ localize "ARSDD.of" }}</span>
+        <input type="text" name="system.action.uses.max" value="{{system.action.uses.max}}"/>
+        <span class="sep">{{ localize "ARSDD.per" }}</span>
+        <select name="system.action.uses.per">
+            {{#select system.action.uses.per}}
+            <option value=""></option>
+            {{#each config.limitedUsePeriods as |name key|}}
+            <option value="{{key}}">{{name}}</option>
+            {{/each}}
+            {{/select}}
+        </select>
+    </div>
+</div>
+{{/if}}
+
+{{#if flags.isSpell}}
+    {{#if flags.hasActivation}}
+<h4 class="form-header">{{ localize "ARSDD.Spell" }}</h4>
+<div class="form-group">
+    <div class="form-group flex-c5">
+        <label>{{ localize "ARSDD.SpellLevel" }}</label>
+        <input type="text" name="system.action.level" value="{{system.action.level}}" data-dtype="Number"/>
+    </div>
+    <div class="form-group flex-c2">
+        <label>{{ localize "ARSDD.MP" }}</label>
+        <input type="text" name="system.action.mpcost" value="{{system.action.mpcost}}" data-dtype="Number"/>    
+    </div>
+    <div class="form-group flex-c2">
+        <label>{{ localize "ARSDD.SpellComponents" }}</label>
+        <label class="checkbox">
+            <input type="checkbox" name="system.components.vocal" {{checked system.components.vocal}}/> {{ localize "ARSDD.ComponentVerbal" }}
+        </label>
+        <label class="checkbox">
+            <input type="checkbox" name="system.components.somatic" {{checked system.components.somatic}}/> {{ localize "ARSDD.ComponentSomatic" }}
+        </label>
+    </div>
+    <div class="form-group flex-c2">
+        <input type="text" name="system.components.quantity" value="{{system.components.quantity}}" data-dtype="Number"/> 
+        <label>
+            {{ localize "ARSDD.ComponentVirtus" }}  
+        </label>             
+    </div>
+</div>
+    {{/if}}
+{{/if}}

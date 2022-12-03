@@ -1,0 +1,1660 @@
+/* Deprecated vars */
+/* ----------------------------------------- */
+/*  Fonts                                    */
+/* ----------------------------------------- */
+@font-face {
+  font-family: 'Modesto Condensed';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../../fonts/modesto-condensed/modesto-condensed.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Modesto Condensed';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../../fonts/modesto-condensed/modesto-condensed-bold.woff2') format('woff2');
+}
+.modesto {
+  font-family: "Modesto Condensed", "Palatino Linotype", serif;
+  font-size: 20px;
+  font-weight: 700;
+}
+/* ----------------------------------------- */
+/*  Sheet Styles                             */
+/* ----------------------------------------- */
+/* ----------------------------------------- */
+/*  Flexbox                                  */
+/* ----------------------------------------- */
+.flexrow {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+.flexrow > * {
+  flex: 1;
+}
+.flexrow .flex1 {
+  flex: 1;
+}
+.flexrow .flex2 {
+  flex: 2;
+}
+.flexrow .flex3 {
+  flex: 3;
+}
+.flexrow .flex4 {
+  flex: 4;
+}
+.flexcol {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+}
+.flexcol > * {
+  flex: 1;
+}
+.flexcol .flex1 {
+  flex: 1;
+}
+.flexcol .flex2 {
+  flex: 2;
+}
+.flexcol .flex3 {
+  flex: 3;
+}
+.flexcol .flex4 {
+  flex: 4;
+}
+.flexshrink2 {
+  flex-shrink: 2;
+}
+.flexshrink3 {
+  flex-shrink: 2;
+}
+.flexshrink4 {
+  flex-shrink: 2;
+}
+
+
+/* ----------------------------------------- */
+/*  All ArsDD Apps                           */
+/* ----------------------------------------- */
+.arsdd {
+  /* ----------------------------------------- */
+  /*  Element Styles                           */
+  /* ----------------------------------------- */
+  /* Form Groups */
+  /* Tags */
+}
+.arsdd .window-content {
+  background: url("ui/parchment.jpg") repeat;
+  font-size: 13px;
+  color: #191813;
+}
+.arsdd input[type="text"],
+.arsdd input[type="number"],
+.arsdd select {
+  height: calc(100% - 2px);
+  border: 1px solid #7a7971;
+  background: rgba(0, 0, 0, 0.05);
+  color: #191813;
+}
+.arsdd input[type="text"]:hover,
+.arsdd input[type="number"]:hover,
+.arsdd input[type="text"]:focus,
+.arsdd input[type="number"]:focus {
+  border: 1px solid #111;
+  box-shadow: 0 0 8px red;
+}
+.arsdd input:disabled,
+.arsdd select:disabled,
+.arsdd textarea:disabled {
+  color: #4b4a44;
+}
+.arsdd input:disabled:hover,
+.arsdd select:disabled:hover,
+.arsdd textarea:disabled:hover,
+.arsdd input:disabled:focus,
+.arsdd select:disabled:focus,
+.arsdd textarea:disabled:focus {
+  box-shadow: none !important;
+  border: 1px solid transparent !important;
+  outline: none !important;
+}
+.arsdd button {
+  background: rgba(0, 0, 0, 0.1);
+  border: 2px groove #eeede0;
+}
+.arsdd label.checkbox {
+  flex: auto;
+  padding: 0;
+  margin: 0;
+  height: 22px;
+  line-height: 22px;
+  font-size: 11px;
+}
+.arsdd label.checkbox > input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  margin: 0 2px 0 0;
+  position: relative;
+  top: 4px;
+}
+.arsdd label.checkbox.right > input[type="checkbox"] {
+  margin: 0 0 0 2px;
+}
+.arsdd .form-group label {
+  flex: 3;
+  color: #4b4a44;
+  font-weight: bold;
+  padding: 4px 0 0 4px;
+}
+.arsdd .form-group .form-fields {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+.arsdd .form-group .form-fields > * {
+  flex: 1;
+}
+.arsdd .form-group .form-fields .flex1 {
+  flex: 1;
+}
+.arsdd .form-group .form-fields .flex2 {
+  flex: 2;
+}
+.arsdd .form-group .form-fields .flex3 {
+  flex: 3;
+}
+.arsdd .form-group .form-fields .flex4 {
+  flex: 4;
+}
+.arsdd .form-group .form-fields > * {
+  margin: 0 3px 0 0;
+}
+.arsdd .form-group .form-fields > *:last-child {
+  margin-right: 0;
+}
+.arsdd .form-group-col {
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: stretch;
+}
+
+.arsdd .wrap {
+  flex-wrap:wrap;
+}
+.arsdd .flex-c1 {
+  flex-basis: 100%;
+}
+.arsdd .flex-c2 {
+  flex-basis: 50%;
+}
+.arsdd .flex-c3 {
+  flex-basis: 33%;
+}
+.arsdd .flex-2c3 {
+  flex-basis: 67%;
+}
+.arsdd .flex-c4 {
+  flex-basis: 25%;
+}
+.arsdd .flex-c5 {
+  flex-basis: 20%;
+}
+.arsdd .flex-2c5 {
+  flex-basis: 40%;
+}
+.arsdd .flex-3c5 {
+  flex-basis: 60%;
+}
+.arsdd .flex-4c5 {
+  flex-basis: 80%;
+}
+.arsdd .form-group.stacked label {
+  flex: 0 0 100%;
+  margin: 0;
+}
+.arsdd .form-group.stacked label.checkbox {
+  flex: auto;
+  text-align: left;
+}
+.arsdd .form-group .flex-c1 {
+  flex-basis: 100%;
+}
+.arsdd .form-group .flex-c2 {
+  flex-basis: 50%;
+}
+.arsdd .form-group .flex-c3 {
+  flex-basis: 33%;
+}
+.arsdd .form-group .flex-c4 {
+  flex-basis: 25%;
+}
+.arsdd .form-group .flex-c5 {
+  flex-basis: 20%;
+}
+.arsdd .form-group .flex-c13 {
+  flex-basis: 7%;
+  flex-shrink: 1;
+}
+.flex-c13 > input {
+  text-align: right;
+}
+.arsdd .form-header {
+  margin: 0 0 0.25em 0;
+  padding: 2px 0;
+  border-top: 2px groove #eeede0;
+  border-bottom: 2px groove #eeede0;
+  font-family: "Modesto Condensed", "Palatino Linotype", serif;
+  font-size: 20px;
+  font-weight: 700;
+}
+.arsdd .tag {
+  display: inline-block;
+  margin: 0 2px 0 0;
+  padding: 0 3px;
+  font-size: 10px;
+  line-height: 16px;
+  border: 1px solid #999;
+  border-radius: 3px;
+  background: rgba(0, 0, 0, 0.05);
+}
+/* ----------------------------------------- */
+/*  document Sheets Specifically               */
+/* ----------------------------------------- */
+.arsdd.sheet {
+  /* ----------------------------------------- */
+  /*  Element Styles                           */
+  /* ----------------------------------------- */
+  /* ----------------------------------------- */
+  /*  TinyMCE                                  */
+  /* ----------------------------------------- */
+  /* ----------------------------------------- */
+  /*  Sheet Header                             */
+  /* ----------------------------------------- */
+  /* ----------------------------------------- */
+  /*  Sheet Navigation                         */
+  /* ----------------------------------------- */
+  /* ----------------------------------------- */
+  /*  Sheet Body                               */
+  /* ----------------------------------------- */
+  /* ----------------------------------------- */
+  /*  List Filters                             */
+  /* ----------------------------------------- */
+  /* ----------------------------------------- */
+  /*  Trait Lists                              */
+  /* ----------------------------------------- */
+  /* ----------------------------------------- */
+  /*  Items Lists                              */
+  /* ----------------------------------------- */
+  /* ----------------------------------------- */
+  /*  Active Effects                           */
+  /* ----------------------------------------- */
+}
+.arsdd.sheet .window-content {
+  overflow-y: hidden;
+  padding: 5px;
+  background: url("ui/parchment.jpg") repeat;
+  font-size: 13px;
+  color: #191813;
+}
+.arsdd.sheet .window-content form {
+  height: 100%;
+  overflow: hidden;
+}
+.arsdd.sheet .window-content .tab {
+  height: 100%;
+  overflow-y: auto;
+  align-content: flex-start;
+}
+.arsdd.sheet input[type="text"],
+.arsdd.sheet input[type="number"] {
+  background: none;
+  border: 1px solid transparent;
+}
+.arsdd.sheet input[type="text"]:hover,
+.arsdd.sheet input[type="number"]:hover,
+.arsdd.sheet input[type="text"]:focus,
+.arsdd.sheet input[type="number"]:focus {
+  border: 1px solid #111;
+}
+.arsdd.sheet select {
+  flex: 1;
+  font-size: 12px;
+  height: 22px;
+  background: transparent;
+}
+.arsdd.sheet .editable .rollable:hover {
+  cursor: pointer;
+}
+.arsdd.sheet .editable h4.rollable:hover,
+.arsdd.sheet .editable .rollable:hover > h4 {
+  color: #000;
+  text-shadow: 0 0 10px red;
+}
+.arsdd.sheet span.sep {
+  flex: none;
+  margin: 0 1px;
+  display: inline;
+  position: relative;
+  color: #7a7971;
+  font-weight: normal;
+}
+.arsdd.sheet .editor {
+  height: 100%;
+}
+.arsdd.sheet .editor .tox-toolbar-overlord,
+.arsdd.sheet .editor .tox-toolbar__primary {
+  background: none;
+}
+.arsdd.sheet .sheet-header {
+  flex: 0 0 100px;
+  border-bottom: 2px groove #eeede0;
+  /* Character Name */
+  /* Profile Image */
+  /* Header Summary Details */
+}
+.arsdd.sheet .sheet-header .header-details {
+  font-family: "Modesto Condensed", "Palatino Linotype", serif;
+  font-size: 20px;
+  font-weight: 700;
+}
+.arsdd.sheet .sheet-header h1 {
+  flex: 1;
+  border-bottom: none;
+  height: 60px;
+  margin: 0;
+  padding: 5px;
+}
+.arsdd.sheet .sheet-header h1 input {
+  display: block;
+  height: 50px;
+  font-size: 32px;
+  margin: 0;
+}
+.arsdd.sheet .sheet-header img.profile {
+  flex: 0 0 100px;
+  max-width: 100px;
+  height: 100px;
+  object-fit: contain;
+  border: none;
+  border-right: 2px groove #eeede0;
+}
+.arsdd.sheet .sheet-header .summary {
+  flex: 0 0 100%;
+  height: 40px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: 2px groove #eeede0;
+  border-bottom: none;
+}
+.arsdd.sheet .sheet-header .summary li {
+  height: calc(100% - 6px);
+  float: left;
+  margin: 2px 0;
+  padding: 0;
+  border-right: 2px groove #eeede0;
+  line-height: 34px;
+  color: #4b4a44;
+}
+.arsdd.sheet .sheet-header .summary li:last-child {
+  border-right: none;
+}
+.arsdd.sheet .sheet-navigation {
+  flex: 0 0 30px;
+  margin-bottom: 5px;
+  font-family: "Modesto Condensed", "Palatino Linotype", serif;
+  font-size: 20px;
+  font-weight: 700;
+}
+.arsdd.sheet .sheet-navigation .item {
+  height: 30px;
+  line-height: 32px;
+  margin: 0 24px;
+  border-bottom: 3px solid #b5b3a4;
+}
+.arsdd.sheet .sheet-navigation .item.active {
+  border-bottom: 3px solid #44191A;
+}
+.arsdd.sheet .sheet-body {
+  flex: 1;
+  overflow: hidden;
+}
+.arsdd.sheet .filter-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  line-height: 16px;
+  max-width: 70%;
+}
+.arsdd.sheet .filter-list .filter-icon {
+  flex: none;
+  font-size: 14px;
+  color: #7a7971;
+}
+.arsdd.sheet .filter-list .filter-item {
+  text-align: center;
+  font-size: 12px;
+  margin: 0 6px 0 0;
+  border-bottom: 3px solid #b5b3a4;
+  white-space: nowrap;
+}
+.arsdd.sheet .filter-list .filter-item:last-child {
+  margin: 0;
+}
+.arsdd.sheet .filter-list .filter-item:hover {
+  text-shadow: 0 0 4px red;
+  border-bottom: 3px solid #7a7971;
+}
+.arsdd.sheet .filter-list .filter-item.active {
+  border-bottom: 3px solid #44191A;
+}
+.arsdd.sheet .traits {
+  margin: 5px 0 0;
+}
+.arsdd.sheet .traits .trait-selector {
+  flex: 0 0 16px;
+  padding: 2px 0;
+  color: #999;
+  font-size: 10px;
+}
+.arsdd.sheet .traits .traits-list {
+  flex: 0 0 100%;
+  line-height: 20px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.arsdd.sheet .items-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  color: #7a7971;
+}
+.arsdd.sheet .items-list .item-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.arsdd.sheet .items-list .item-name {
+  flex: 2;
+  margin: 0;
+  overflow: hidden;
+  font-size: 13px;
+  text-align: left;
+}
+.arsdd.sheet .items-list .item-name h3,
+.arsdd.sheet .items-list .item-name h4 {
+  margin: 0;
+  white-space: nowrap;
+  overflow-x: hidden;
+}
+.arsdd.sheet .items-list .item-controls {
+  flex: 0 0 60px;
+  justify-content: space-between;
+}
+.arsdd.sheet .items-list .item-controls a {
+  font-size: 12px;
+  text-align: center;
+}
+.arsdd.sheet .items-list .item {
+  padding: 0 2px;
+  border-bottom: 1px solid #c9c7b8;
+}
+.arsdd.sheet .items-list .item:last-child {
+  border-bottom: none;
+}
+.arsdd.sheet .items-list .item .item-name {
+  color: #191813;
+}
+.arsdd.sheet .items-list .item .item-name .item-image {
+  flex: 0 0 30px;
+  height: 30px;
+  background-size: 30px;
+  border: none;
+  margin-right: 5px;
+}
+.arsdd.sheet .items-list .item .item-name .item-action {
+  flex: 0 0 30px;
+  height: 30px;
+  background-size: 30px;
+  border: none;
+  margin-right: 5px;
+}
+.arsdd.sheet .items-list .item .item-name .item-effect {
+  flex: 0 0 30px;
+  height: 30px;
+  background-size: 30px;
+  margin-right: 5px;
+}
+.arsdd.sheet .items-list .item .item-name .item-damage {
+  flex: 0 0 30px;
+  height: 30px;
+  background-size: 30px;
+  border: none;
+  margin-right: 5px;
+}
+.arsdd.sheet .items-list .item .item-name .item-healing {
+  flex: 0 0 30px;
+  height: 30px;
+  background-size: 30px;
+  border: none;
+  margin-right: 5px;
+}
+.arsdd.sheet .items-list .item .item-name .item-area {
+  flex: 0 0 30px;
+  height: 30px;
+  background-size: 30px;
+  border: none;
+  margin-right: 5px;
+}
+.arsdd.sheet .items-list .items-header {
+  height: 28px;
+  margin: 2px 0;
+  padding: 0;
+  background: rgba(0, 0, 0, 0.05);
+  border: 2px groove #eeede0;
+  font-weight: bold;
+}
+.arsdd.sheet .items-list .items-header > * {
+  font-size: 12px;
+  text-align: center;
+}
+.arsdd.sheet .items-list .items-header h3 {
+  padding-left: 5px;
+  font-family: "Modesto Condensed", "Palatino Linotype", serif;
+  font-size: 20px;
+  font-weight: 700;
+  text-align: left;
+  font-size: 16px;
+}
+.arsdd.sheet .effects .item .effect-source,
+.arsdd.sheet .effects .item .effect-duration,
+.arsdd.sheet .effects .item .effect-controls {
+  text-align: center;
+  border-left: 1px solid #c9c7b8;
+  border-right: 1px solid #c9c7b8;
+  font-size: 12px;
+}
+.arsdd.sheet .effects .item .effect-controls {
+  border: none;
+}
+/* ----------------------------------------- */
+/* Trait Selector
+/* ----------------------------------------- */
+#trait-selector .trait-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+#trait-selector input[type="text"] {
+  height: 24px;
+  margin: 2px;
+}
+.arsdd.sheet.actor {
+  /* ----------------------------------------- */
+  /*  Sheet Header                             */
+  /* ----------------------------------------- */
+  /* ----------------------------------------- */
+  /*  General Styles                           */
+  /* ----------------------------------------- */
+  /* ----------------------------------------- */
+  /*  Attributes                               */
+  /* ----------------------------------------- */
+  /* ----------------------------------------- */
+  /*  Ability Scores                           */
+  /* ----------------------------------------- */
+  /* ----------------------------------------- */
+  /*  Skills                                   */
+  /* ----------------------------------------- */
+  /* ----------------------------------------- */
+  /*  Statuses                                 */
+  /* ----------------------------------------- */
+  /* ----------------------------------------- */
+  /*  Traits                                   */
+  /* ----------------------------------------- */
+  /* ----------------------------------------- */
+  /*  Inventory Lists                          */
+  /* ----------------------------------------- */
+  /* Inventory List Filters */
+  /* Encumbrance Bar */
+  /* ----------------------------------------- */
+  /*  Spellbook                                */
+  /* ----------------------------------------- */
+  /* ----------------------------------------- */
+  /*  TinyMCE                                  */
+  /* ----------------------------------------- */
+}
+.arsdd.sheet.actor .sheet-header img.profile {
+  flex: 0 0 160px;
+  max-width: 160px;
+  height: 160px;
+}
+.arsdd.sheet.actor .sheet-header h1.charname {
+  flex: 1;
+  height: 60px;
+  padding: 0;
+}
+.arsdd.sheet.actor .sheet-header h1.charname input {
+  height: 40px;
+  margin: 10px 0;
+}
+.arsdd.sheet.actor .sheet-header .header-icon {
+  flex: 0 0 250px;
+  margin-right: 3px;
+  height: 60px;
+  justify-content: flex-end;
+  text-align: right;
+}
+.arsdd.sheet.actor .sheet-header .summary {
+  height: 30px;
+  border-bottom: 2px groove #eeede0;
+  font-size: 18px;
+}
+.arsdd.sheet.actor .sheet-header .summary input,
+.arsdd.sheet.actor .sheet-header .summary span {
+  display: block;
+  height: 24px;
+  line-height: 24px;
+}
+.arsdd.sheet.actor .sheet-header .attributes {
+  flex: 0 0 100%;
+  margin: 0;
+}
+.arsdd.sheet.actor .sheet-header .attributes .attribute {
+  height: 70px;
+  margin: 0;
+  border: none;
+  border-right: 2px groove #eeede0;
+  border-radius: 0;
+}
+.arsdd.sheet.actor .sheet-header .attributes .attribute:last-child {
+  border-right: none;
+}
+.arsdd.sheet.actor .sheet-header .attributes .attribute .attribute-value {
+  height: 30px;
+  line-height: 30px;
+}
+.arsdd.sheet.actor .sheet-header .attributes .movement h4.attribute-name {
+  position: relative;
+}
+.arsdd.sheet.actor .sheet-header .attributes .movement .config-button {
+  position: absolute;
+  display: none;
+  right: 0;
+  top: 1px;
+  font-size: 12px;
+  font-weight: normal;
+}
+.arsdd.sheet.actor .sheet-header .attributes .movement:hover .config-button {
+  display: block;
+}
+.arsdd.sheet.actor .sheet-header .attributes input.temphp {
+  width: 25%;
+}
+.arsdd.sheet.actor h4.box-title {
+  height: 18px;
+  line-height: 16px;
+  margin: 4px 8px 2px;
+  font-family: "Modesto Condensed", "Palatino Linotype", serif;
+  font-size: 20px;
+  font-weight: 700;
+  font-size: 18px;
+  color: #4b4a44;
+  border-bottom: 1px solid #c9c7b8;
+  white-space: nowrap;
+}
+.arsdd.sheet.actor .tab.attributes {
+  overflow: hidden;
+}
+.arsdd.sheet.actor ul.attributes {
+  flex: 0 0 60px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.arsdd.sheet.actor ul.attributes li.attribute {
+  height: 80px;
+  margin: 0 5px 0 0;
+  border: 2px groove #eeede0;
+  border-radius: 4px;
+  text-align: center;
+}
+.arsdd.sheet.actor ul.attributes li.attribute:last-child {
+  margin: 0;
+}
+.arsdd.sheet.actor ul.attributes li.attribute .attribute-value {
+  display: flex;
+  justify-content: center;
+  height: 28px;
+  line-height: 28px;
+  font-family: "Modesto Condensed", "Palatino Linotype", serif;
+  font-size: 20px;
+  font-weight: 700;
+}
+.arsdd.sheet.actor ul.attributes li.attribute .attribute-value > * {
+  font-weight: 400;
+  font-size: 24px;
+}
+.arsdd.sheet.actor ul.attributes li.attribute .attribute-value.multiple input {
+  flex: 0 0 33%;
+}
+.arsdd.sheet.actor ul.attributes li.attribute .attribute-footer {
+  flex: 0 0 18px;
+  margin-top: -1px;
+  line-height: 18px;
+  font-family: "Signika", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  white-space: nowrap;
+}
+
+.arsdd.sheet.actor ul.actions {
+  flex: 0 0 60px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.arsdd.sheet.actor ul.actions li.action {
+  flex: 0 0 20%;
+  height: 60px;
+  margin: 0 5px 0 0;
+  border: 2px groove #eeede0;
+  border-radius: 4px;
+  text-align: center;
+  padding: 15px 5px 0 5px;
+}
+.arsdd.sheet.actor ul.actions li.action a {
+  font-weight: 400;
+  font-size: 20px;
+}
+
+
+.arsdd.sheet.actor .ability-scores {
+  flex: 0 0 100px;
+  height: 440px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-family: "Modesto Condensed", "Palatino Linotype", serif;
+  font-size: 20px;
+  font-weight: 700;
+  border: 2px groove #eeede0;
+  border-radius: 3px;
+}
+.arsdd.sheet.actor .ability-scores .ability {
+  height: 70px;
+  text-align: center;
+  border-bottom: 2px groove #eeede0;
+}
+.arsdd.sheet.actor .ability-scores .ability:last-child {
+  border-bottom: none;
+  margin-bottom: -3px;
+}
+.arsdd.sheet.actor .ability-scores .ability input.ability-score {
+  height: 30px;
+  width: 36px;
+  margin: 0 auto;
+  line-height: 32px;
+  font-size: 24px;
+}
+.arsdd.sheet.actor .ability-scores .ability .ability-modifiers {
+  height: 24px;
+  margin: -8px 0 0;
+}
+.arsdd.sheet.actor .ability-scores .ability .ability-modifiers span.ability-mod,
+.arsdd.sheet.actor .ability-scores .ability .ability-modifiers span.ability-save {
+  flex: 0 0 24px;
+  height: 22px;
+  line-height: 22px;
+  font-size: 16px;
+  border-top: 2px groove #eeede0;
+}
+.arsdd.sheet.actor .ability-scores .ability .ability-modifiers span.ability-mod {
+  border-right: 2px groove #eeede0;
+}
+.arsdd.sheet.actor .ability-scores .ability .ability-modifiers .ability-proficiency {
+  line-height: 30px;
+}
+.arsdd.sheet.actor .ability-scores .ability .ability-modifiers span.ability-save {
+  border-left: 2px groove #eeede0;
+}
+.arsdd.sheet.actor .proficiency-toggle {
+  color: #b5b3a4;
+  font-size: 12px;
+}
+/* .arsdd.sheet.actor .proficient .proficiency-toggle {
+  color: #4b4a44;
+} */
+/* .arsdd.sheet.actor .locked .proficiency-toggle {
+  color: #b5b3a4;
+  text-shadow: none;
+  cursor: default;
+} */
+.arsdd.sheet.actor ul.skills-list {
+  flex: 0 0 180px;
+  list-style: none;
+  margin: 0 5px 0;
+  padding: 3px 0 2px;
+  border: 2px groove #eeede0;
+  border-radius: 3px;
+}
+.arsdd.sheet.actor ul.skills-list li.skill {
+  height: 24px;
+  padding: 3px 2px;
+}
+.arsdd.sheet.actor ul.skills-list li.skill:nth-child(even) {
+  background: rgba(0, 0, 0, 0.05);
+}
+.arsdd.sheet.actor ul.skills-list li.skill h4 {
+  flex: 1px;
+  margin: 0;
+  font-size: 11px;
+  line-height: 18px;
+}
+.arsdd.sheet.actor ul.skills-list li.skill .skill-proficiency {
+  flex: 0 0 16px;
+  line-height: 18px;
+}
+.arsdd.sheet.actor ul.skills-list li.skill .skill-ability {
+  flex: 0 0 26px;
+  text-transform: capitalize;
+}
+.arsdd.sheet.actor ul.skills-list li.skill .skill-mod {
+  flex: 0 0 20px;
+}
+.arsdd.sheet.actor ul.skills-list li.skill .skill-passive {
+  flex: 0 0 26px;
+  text-align: center;
+  color: #7a7971;
+}
+.arsdd.sheet.actor .counters {
+  flex: none;
+  padding: 5px 0;
+  margin: 0;
+  border-bottom: 2px groove #eeede0;
+}
+.arsdd.sheet.actor .counters .counter {
+  height: 20px;
+  line-height: 20px;
+}
+.arsdd.sheet.actor .counters .counter h4 {
+  flex: auto;
+  margin: 0;
+  font-size: 13px;
+  font-weight: bold;
+  color: #4b4a44;
+}
+.arsdd.sheet.actor .counters .counter .counter-value {
+  flex: none;
+  text-align: right;
+}
+.arsdd.sheet.actor .counters .counter .counter-value > * {
+  display: inline;
+}
+.arsdd.sheet.actor .counters .counter input[type="text"],
+.arsdd.sheet.actor .counters .counter input[type="number"] {
+  height: 20px;
+  max-width: 20px;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+.arsdd.sheet.actor .counters .counter input[type="checkbox"] {
+  position: relative;
+  width: 16px;
+  height: 16px;
+  margin: 0;
+  top: 4px;
+}
+.arsdd.sheet.actor .counters .counter span.sep {
+  font-size: 12px;
+}
+.arsdd.sheet.actor .center-pane {
+  height: 100%;
+  padding: 0 5px 0 3px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+}
+.arsdd.sheet.actor .traits .form-group,
+.arsdd.sheet.actor .traits .form-group-stacked {
+  margin: 0 0 3px 0;
+  justify-content: space-between;
+}
+.arsdd.sheet.actor .traits .config-button {
+  flex: 1;
+}
+.arsdd.sheet.actor .traits label {
+  flex: none;
+  line-height: 20px;
+  font-weight: bold;
+  margin: 0 10px 0 0;
+}
+.arsdd.sheet.actor .traits select {
+  max-width: 200px;
+}
+.arsdd.sheet.actor .traits input {
+  text-align: right;
+}
+.arsdd.sheet.actor .traits i.fas {
+  float: right;
+  margin-right: 3px;
+  text-align: right;
+  color: #999;
+}
+.arsdd.sheet.actor .traits i.fas:hover {
+  color: #111;
+  text-shadow: 0 0 10px red;
+}
+.arsdd.sheet.actor .traits .inactive {
+  color: #7a7971;
+}
+.arsdd.sheet.actor .tab.features,
+.arsdd.sheet.actor .tab.inventory,
+.arsdd.sheet.actor .tab.spellbook {
+  overflow-y: hidden;
+}
+.arsdd.sheet.actor .inventory-filters {
+  margin: 0 8px;
+  flex: 0 0 0%;
+  justify-content: flex-end;
+}
+.arsdd.sheet.actor .inventory-list {
+  padding: 0 5px;
+
+}
+.arsdd.sheet.actor .inventory-list .item .item-name .rollable {
+  cursor: pointer;
+}
+.arsdd.sheet.actor .inventory-list .item .item-name .item-action.rollable:hover {
+  background-image: url("icons/svg/combat.svg") !important;
+}
+.arsdd.sheet.actor .inventory-list .item .item-name .item-damage.rollable:hover {
+  background-image: url("icons/svg/blood.svg") !important;
+}
+.arsdd.sheet.actor .inventory-list .item .item-name .item-area.rollable:hover {
+  background-image: url("icons/svg/circle.svg") !important;
+}
+.arsdd.sheet.actor .inventory-list .item .item-name .item-healing.rollable:hover {
+  background-image: url("icons/svg/heal.svg") !important;
+}
+
+.arsdd.sheet.actor .inventory-list .item .item-name .item-effect.rollable.effectSelfActive {
+  border: 3px solid rgb(5, 146, 59);
+}
+.arsdd.sheet.actor .inventory-list .item .item-name .item-effect.rollable.effectSelfActive:hover {
+  border: 3px solid rgb(105, 48, 48);
+}
+.arsdd.sheet.actor .inventory-list .item .item-name .item-effect.rollable.effectSelfDisabled {
+  border: 3px solid rgb(105, 48, 48);
+}
+.arsdd.sheet.actor .inventory-list .item .item-name .item-effect.rollable.effectSelfDisabled:hover {
+  border: 3px solid rgb(5, 146, 59);
+}
+.arsdd.sheet.actor .inventory-list .item .item-name .item-effect.rollable.effectTargetSelfActive {
+  border: 3px solid rgb(4, 173, 173);
+}
+.arsdd.sheet.actor .inventory-list .item .item-name .item-effect.rollable.effectTargetSelfActive:hover {
+  border: 3px solid rgb(255, 255, 255);
+}
+.arsdd.sheet.actor .inventory-list .item .item-name .item-effect.rollable.effectTargetSelfDisabled:hover {
+  border: 3px solid rgb(255, 255, 255);
+}
+
+.arsdd.sheet.actor .inventory-list .item i.not-attuned {
+  color: #7a7971;
+}
+.arsdd.sheet.actor .inventory-list .item i.attuned {
+  color: #44191A;
+}
+.arsdd.sheet.actor .inventory-list .item .item-uses input {
+  width: 24px;
+  text-align: center;
+}
+.arsdd.sheet.actor .inventory-list .item .item-properties {
+  margin-top: 3px;
+}
+.arsdd.sheet.actor .inventory-list .item .item-recharge {
+  flex: 0 0 80px;
+  text-align: right;
+  font-size: 11px;
+  white-space: nowrap;
+}
+.arsdd.sheet.actor .inventory-list .inventory-header .item-controls a.item-create {
+  flex: 0 0 100%;
+}
+.arsdd.sheet.actor .inventory-list .item-detail {
+  flex: 0 0 70px;
+  font-size: 12px;
+  text-align: center;
+  border-right: 1px solid #c9c7b8;
+  word-break: break-word;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.arsdd.sheet.actor .inventory-list .item-detail:last-child {
+  border-right: none;
+}
+.arsdd.sheet.actor .inventory-list .item-detail.item-action {
+  flex: 0 0 100px;
+}
+.arsdd.sheet.actor .inventory-list .item-detail.attunement {
+  flex: 0 0 24px;
+}
+.arsdd.sheet.actor .inventory-list .item-weight {
+  flex: 0 0 60px;
+  border-left: 1px solid #c9c7b8;
+  border-right: 1px solid #c9c7b8;
+}
+.arsdd.sheet.actor .inventory-list .item-controls {
+  flex: 0 0 44px;
+}
+.arsdd.sheet.actor .inventory-list .item-summary {
+  flex: 0 0 100%;
+  font-size: 12px;
+  line-height: 16px;
+  padding: 0.25em 0.5em;
+  color: #191813;
+  border-top: 1px solid #c9c7b8;
+}
+.arsdd.sheet.actor .encumbrance {
+  flex: 0 0 12px;
+  background: #7a7971;
+  margin: 1px 15px 0 1px;
+  border: 1px solid #191813;
+  border-radius: 3px;
+  position: relative;
+}
+.arsdd.sheet.actor .encumbrance .encumbrance-bar {
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  background: #6c8aa5;
+  height: 8px;
+  border: 1px solid #cde4ff;
+  border-radius: 2px;
+}
+.arsdd.sheet.actor .encumbrance .encumbrance-label {
+  height: 10px;
+  padding: 0 5px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 13px;
+  line-height: 12px;
+  text-align: right;
+  color: #EEE;
+  text-shadow: 0 0 5px #000;
+}
+.arsdd.sheet.actor .encumbrance .encumbrance-breakpoint {
+  display: block;
+  position: absolute;
+}
+.arsdd.sheet.actor .encumbrance .encumbrance-breakpoint.encumbrance-33 {
+  left: 33%;
+}
+.arsdd.sheet.actor .encumbrance .encumbrance-breakpoint.encumbrance-66 {
+  left: 66%;
+}
+.arsdd.sheet.actor .encumbrance .arrow-up {
+  bottom: 0;
+  width: 0;
+  height: 0;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-bottom: 4px solid #666;
+}
+.arsdd.sheet.actor .encumbrance .arrow-down {
+  top: 0;
+  width: 0;
+  height: 0;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 4px solid #666;
+}
+.arsdd.sheet.actor .encumbrance.encumbered .arrow-up {
+  border-bottom: 4px solid #000;
+}
+.arsdd.sheet.actor .encumbrance.encumbered .arrow-down {
+  border-top: 4px solid #000;
+}
+.arsdd.sheet.actor .spellcasting-ability {
+  flex: 0 0 240px;
+  margin: 0;
+}
+.arsdd.sheet.actor .spellcasting-ability label,
+.arsdd.sheet.actor .spellcasting-ability span {
+  flex: none;
+}
+.arsdd.sheet.actor .spellcasting-ability input {
+  flex: 0 0 28px;
+  text-align: center;
+}
+.arsdd.sheet.actor .spellcasting-ability select {
+  margin: 0 5px;
+  flex: 0 0 120px;
+}
+.arsdd.sheet.actor .spell-slots,
+.arsdd.sheet.actor .spell-comps {
+  flex: none;
+  padding: 0 5px;
+  font-size: 12px;
+  color: #7a7971;
+  border-right: 1px solid #c9c7b8;
+}
+.arsdd.sheet.actor .spell-slots input {
+  display: inline;
+  max-width: 20px;
+}
+.arsdd.sheet.actor .spell-slots .sep {
+  font-size: 13px;
+  font-weight: normal;
+}
+.arsdd.sheet.actor .spellbook .spell-uses {
+  padding-right: 5px;
+  text-align: right;
+  color: #7a7971;
+}
+.arsdd.sheet.actor .spell-action,
+.arsdd.sheet.actor .spell-target {
+  flex: 0 0 100px;
+  font-size: 12px;
+  color: #7a7971;
+  text-align: center;
+  border-right: 1px solid #c9c7b8;
+}
+.arsdd.sheet.actor .spell-component {
+  line-height: 14px;
+}
+.arsdd.sheet.actor .spell-component.C,
+.arsdd.sheet.actor .spell-component.R {
+  display: inline-block;
+  text-align: center;
+  padding-top: 1px;
+  width: 16px;
+  color: #c9c7b8;
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid transparent;
+  border-radius: 8px;
+}
+.arsdd.sheet.actor .spellbook-empty .item-controls {
+  flex: 1;
+}
+.arsdd.sheet.actor .editor {
+  padding: 0 8px;
+}
+.arsdd.sheet.item {
+  min-height: 400px;
+  max-height: 95%;
+  min-width: 480px;
+  /* ----------------------------------------- */
+  /*  Sheet Header                             */
+  /* ----------------------------------------- */
+  /* ----------------------------------------- */
+  /*  Item Details Form                        */
+  /* ----------------------------------------- */
+  /* ----------------------------------------- */
+  /*  Item Actions                             */
+  /* ----------------------------------------- */
+  /* ----------------------------------------- */
+  /*  Item Actions                             */
+  /* ----------------------------------------- */
+  /* ----------------------------------------- */
+  /*  Loot Sheet (No Tabs)                     */
+  /* ----------------------------------------- */
+}
+.arsdd.sheet.item .sheet-header img.profile {
+  border: 2px solid #000;
+}
+.arsdd.sheet.item .sheet-header .item-subtitle {
+  flex: 0 0 100px;
+  height: 60px;
+  margin: 0;
+  padding: 5px;
+  text-align: right;
+  color: #7a7971;
+}
+.arsdd.sheet.item .sheet-header .item-subtitle .item-type {
+  font-size: 24px;
+  line-height: 26px;
+  margin: 0;
+}
+.arsdd.sheet.item .sheet-header .item-subtitle .item-status {
+  font-size: 16px;
+  line-height: 24px;
+}
+.arsdd.sheet.item .sheet-navigation {
+  margin-bottom: 5px;
+}
+.arsdd.sheet.item .sheet-navigation .item {
+  font-size: 18px;
+}
+.arsdd.sheet.item .sheet-body {
+  overflow: hidden;
+}
+.arsdd.sheet.item .sheet-body .tab {
+  padding: 0 5px;
+  overflow: hidden auto;
+}
+.arsdd.sheet.item .sheet-body .item-properties {
+  flex: 0 0 160px;
+  margin: 5px 5px 5px 0;
+  padding-right: 5px;
+  border-right: 2px groove #eeede0;
+}
+.arsdd.sheet.item .sheet-body .item-properties .form-group {
+  margin: 0;
+}
+.arsdd.sheet.item .sheet-body .item-properties .form-group label {
+  line-height: 20px;
+  flex: 0 0 80px;
+}
+.arsdd.sheet.item .sheet-body .item-properties .form-group input {
+  text-align: right;
+}
+.arsdd.sheet.item .sheet-body .item-properties .properties-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.arsdd.sheet.item .sheet-body .item-properties .properties-list li {
+  margin: 3px 0;
+  padding: 0 2px;
+  background: rgba(0, 0, 0, 0.05);
+  border: 2px groove #eeede0;
+  text-align: center;
+  font-size: 12px;
+  line-height: 18px;
+}
+.arsdd.sheet.item .details input[type="text"],
+.arsdd.sheet.item .details input[type="number"],
+.arsdd.sheet.item .details select {
+  height: 24px;
+  border: 1px solid #7a7971;
+  background: rgba(0, 0, 0, 0.05);
+}
+.arsdd.sheet.item .details .form-group span {
+  text-align: center;
+  line-height: 24px;
+}
+.arsdd.sheet.item .details .form-group.input-select select {
+  flex: 1.8;
+}
+.arsdd.sheet.item .details .form-group.input-select-select select {
+  flex: 1.5;
+}
+.arsdd.sheet.item .details .form-group.uses-per .form-fields {
+  flex-wrap: nowrap;
+}
+.arsdd.sheet.item .details .form-group.uses-per input {
+  flex: 0 0 32px;
+}
+.arsdd.sheet.item .details .form-group.uses-per span {
+  flex: 0 0 16px;
+  margin: 0 4px 0 0;
+}
+.arsdd.sheet.item .details span.sep {
+  flex: 0 0 8px;
+}
+.arsdd.sheet.item .details .prepared {
+  flex: 1.3 !important;
+  text-align: right;
+  padding-right: 10px;
+}
+.arsdd.sheet.item h4.damage-header {
+  margin: 0;
+  padding: 0;
+  font-weight: bold;
+  line-height: 24px;
+  color: #4b4a44;
+}
+.arsdd.sheet.item .damage-parts {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.arsdd.sheet.item .damage-parts .damage-part {
+  flex: 0 0 100%;
+  padding: 0;
+}
+.arsdd.sheet.item .damage-parts .damage-part input {
+  flex: 3;
+}
+.arsdd.sheet.item .damage-parts .damage-part select {
+  margin-left: 5px;
+  flex: 1;
+}
+.arsdd.sheet.item .damage-control {
+  width: 18px;
+  flex: 0 0 18px;
+  line-height: 24px;
+  float: right;
+  text-align: right;
+  color: #7a7971;
+}
+.arsdd.sheet.item .recharge.form-group span {
+  text-align: right;
+  padding-right: 3px;
+}
+.arsdd.sheet.item .recharge.form-group input[type="text"] {
+  flex: 0 0 32px;
+  text-align: center;
+}
+.arsdd.sheet.item .recharge.form-group label.checkbox {
+  flex: none;
+}
+.arsdd.sheet.item .recharge.form-group label.checkbox input {
+  width: 16px;
+  height: 16px;
+  top: 4px;
+}
+.arsdd.sheet.item .weapon-properties label.checkbox {
+  flex: 0 0 98px;
+}
+.arsdd.sheet.item .loot-header {
+  margin-bottom: 10px;
+}
+.arsdd.sheet.item input.header {
+  width: 25px;
+}
+/* ----------------------------------------- */
+/*  Chat Cards
+/* ----------------------------------------- */
+.arsdd.chat-card {
+  font-style: normal;
+  font-size: 12px;
+}
+.arsdd.chat-card .card-header {
+  padding: 3px 0;
+  border-top: 2px groove #FFF;
+  border-bottom: 2px groove #FFF;
+}
+.arsdd.chat-card .card-header img {
+  flex: 0 0 36px;
+  margin-right: 5px;
+}
+.arsdd.chat-card .card-header h3 {
+  flex: 1;
+  margin: 0;
+  line-height: 36px;
+  font-family: "Modesto Condensed", "Palatino Linotype", serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: #4b4a44;
+}
+.arsdd.chat-card .card-header h3:hover {
+  color: #111;
+  text-shadow: 0 0 10px red;
+}
+.arsdd.chat-card .card-content {
+  margin: 5px 0;
+}
+.arsdd.chat-card .card-content h3 {
+  font-size: 12px;
+  margin: 0;
+  font-weight: bold;
+}
+.arsdd.chat-card .card-content > * {
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+}
+.arsdd.chat-card .card-buttons {
+  margin: 5px 0;
+}
+.arsdd.chat-card .card-buttons span {
+  display: block;
+  line-height: 28px;
+  text-align: center;
+  border: 1px solid #CCC;
+}
+.arsdd.chat-card .card-buttons button {
+  font-size: 12px;
+  height: 24px;
+  line-height: 20px;
+  margin: 2px 0;
+}
+.arsdd.chat-card .card-footer {
+  padding: 3px 0 0;
+  border-top: 2px groove #FFF;
+}
+.arsdd.chat-card .card-footer span {
+  border-right: 2px groove #FFF;
+  padding: 0 3px 0 0;
+  font-size: 10px;
+}
+.arsdd.chat-card .card-footer span:last-child {
+  border-right: none;
+  padding-right: 0;
+}
+.dice-roll .dice-total.success {
+  color: inherit;
+  background: #C4FFA5;
+  border: 1px solid #006c00;
+}
+.dice-roll .dice-total.halfsuccess {
+  color: inherit;
+  background: #FAFFA8;
+  border: 1px solid #006c00;
+}
+.dice-roll .dice-total.failure {
+  color: inherit;
+  background: #FFC9BA;
+  border: 1px solid #6e0000;
+}
+.dice-roll .dice-total.critical {
+  color: green;
+}
+.dice-roll .dice-total.fumble {
+  color: red;
+}
+.dice-roll .dice-total img {
+  flex: 0 0 36px;
+  margin-right: 5px;
+}
+.dice-roll .dice-total span.name {
+  font-size: 14px;
+  font-weight: normal;
+  text-align: left;
+}
+.dice-roll .dice-total span.total {
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+}
+.dice-roll .dice-total span.difficulty {
+  font-size: 10px;
+  font-weight: normal;
+  text-align: left;
+}
+.message-header img {
+  flex: 0 0 36px;
+  margin-right: 5px;
+}
+/* ----------------------------------------- */
+/*  Basic Structure                          */
+/* ----------------------------------------- */
+.arsdd.sheet.actor.character {
+  min-width: 720px;
+  min-height: 680px;
+  /* ----------------------------------------- */
+  /*  Sheet Header                             */
+  /* ----------------------------------------- */
+  /* ----------------------------------------- */
+  /*  Sheet Body                               */
+  /* ----------------------------------------- */
+  /* ----------------------------------------- */
+  /*  Item Controls                            */
+  /* ----------------------------------------- */
+  /* ----------------------------------------- */
+  /*  Biography                                */
+  /* ----------------------------------------- */
+}
+.arsdd.sheet.actor.character .sheet-header img.profile {
+  flex: 0 0 160px;
+  max-width: 160px;
+  height: 160px;
+}
+.arsdd.sheet.actor.character .sheet-header .header-icon .icon {
+  flex: 0 0 30px;
+  height: 30px;
+  border: none;
+}
+.arsdd.sheet.actor.character .sheet-header .experience {
+  flex: 0 0 32px;
+  margin-bottom: -5px;
+  font-size: 18px;
+}
+.arsdd.sheet.actor.character .sheet-header .experience span.max {
+  color: #7a7971;
+  flex: none;
+  margin-left: 3px;
+}
+.arsdd.sheet.actor.character .sheet-header .xpbar {
+  flex: 0 0 8px;
+  width: 100%;
+  margin-bottom: 5px;
+  background: #7a7971;
+  border: 1px solid #000;
+  border-radius: 3px;
+}
+.arsdd.sheet.actor.character .sheet-header .xpbar .bar {
+  height: 4px;
+  margin: 1px;
+  display: block;
+  background: #afebff;
+  border: 1px solid #000;
+  border-radius: 2px;
+}
+.arsdd.sheet.actor.character .sheet-header .attributes a.rest {
+  border: 1px solid #b5b3a4;
+  border-radius: 2px;
+  background: rgba(0, 0, 0, 0.05);
+  padding: 0 3px;
+  margin: 0 3px;
+}
+.arsdd.sheet.actor.character .sheet-header .attributes .hit-dice {
+  font-size: 24px;
+}
+.arsdd.sheet.actor.character .sheet-header .attributes .initiative .attribute-footer input {
+  width: 32px;
+}
+.arsdd.sheet.actor.character .sheet-header .summary .proficiency {
+  text-align: right;
+  padding-right: 5px;
+}
+.arsdd.sheet.actor.character .resource .attribute-value input {
+  flex: 0 0 25%;
+}
+.arsdd.sheet.actor.character .resource .attribute-value label.recharge {
+  height: 32px;
+  position: relative;
+  font-family: "Signika", sans-serif;
+  font-size: 11px;
+  text-align: center;
+  color: #4b4a44;
+}
+.arsdd.sheet.actor.character .resource .attribute-value label.recharge input[type="checkbox"] {
+  height: 14px;
+  width: 14px;
+  margin: 0;
+  top: -6px;
+}
+.arsdd.sheet.actor.character ul.skills-list {
+  flex: 0 0 212px;
+}
+.arsdd.sheet.actor.character ul.skills-list li.skill {
+  padding: 3px;
+}
+.arsdd.sheet.actor.character ul.skills-list li.skill h4 {
+  flex: 1px;
+  margin: 0;
+  font-size: 13px;
+}
+.arsdd.sheet.actor.character .item-detail.player-class {
+  flex: 0 0 180px;
+  text-align: right;
+  padding-right: 10px;
+}
+.arsdd.sheet.actor.character .inventory .item-controls,
+.arsdd.sheet.actor.character .spellbook .item-controls {
+  flex: 0 0 68px;
+}
+.arsdd.sheet.actor.character .inventory .item-controls .item-toggle,
+.arsdd.sheet.actor.character .spellbook .item-controls .item-toggle {
+  color: #b5b3a4;
+}
+.arsdd.sheet.actor.character .inventory .item-controls .item-toggle.active,
+.arsdd.sheet.actor.character .spellbook .item-controls .item-toggle.active {
+  color: #4b4a44;
+}
+.arsdd.sheet.actor.character .inventory .item-controls .item-toggle.fixed,
+.arsdd.sheet.actor.character .spellbook .item-controls .item-toggle.fixed {
+  color: #44191A;
+}
+.arsdd.sheet.actor.character .inventory .item-controls .item-toggle.fixed:hover,
+.arsdd.sheet.actor.character .spellbook .item-controls .item-toggle.fixed:hover {
+  text-shadow: none;
+}
+.arsdd.sheet.actor.character .characteristics {
+  flex: 0 0 180px;
+  height: 100%;
+  padding: 0 3px 3px;
+}
+.arsdd.sheet.actor.character .characteristics label {
+  flex: 0 0 20px;
+  font-family: "Modesto Condensed", "Palatino Linotype", serif;
+  font-size: 20px;
+  font-weight: 700;
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 20px;
+  text-align: center;
+}
+.arsdd.sheet.actor.character .characteristics textarea {
+  font-family: "Signika", serif;
+  font-size: 13px;
+  border: 1px solid #c9c7b8;
+  resize: none;
+}
+.arsdd.sheet.actor.character .biography {
+  max-width: calc(100% - 180px);
+}
+/* ----------------------------------------- */
+/*  Basic Structure                          */
+/* ----------------------------------------- */
+.features .item-controls {
+  flex: 0 0 68px;
+}
+.features .item-controls .item-toggle {
+  color: #b5b3a4;
+}
+.features .item-controls .item-toggle.active {
+  color: #4b4a44;
+}
+.counters .counter.creature-cap .counter-value {
+  flex: 1;
+}
+.counters .counter.creature-cap input {
+  max-width: none;
+  text-align: right;
+}
+.counters .counter.cargo-cap input {
+  max-width: 40px;
+  text-align: right;
+}
+
+
+.wall img.icon {
+  border-width: 1px;
+  width: 40px;
+  height: 40px;
+}
+

@@ -1,0 +1,43 @@
+<ol class="items-list inventory-list">
+{{#each spellbook as |section sid|}}
+    <li class="items-header spellbook-header flexrow">
+        <div class="item-name flexrow">
+            <h3>{{localize section.label}}</h3>
+        </div>
+    </li>
+
+    <ol class="item-list">
+    {{#each section.items as |item i|}}
+        <li class="item flexrow" data-item-id="{{item._id}}">
+            <div class="item-name flexrow">
+                <div class="item-image" style="background-image: url('{{item.img}}');"></div>
+                <h4 class="item-edit rollable" {{#unless item.system.learning.learnt}}style="text-decoration: line-through;"{{/unless}}>{{item.name}}</h4>
+                {{#if item.flags.hasAction}}
+                <div>{{item.system.action.ability}} + {{item.system.action.skill1}} + {{item.system.action.skill2}} à 6+{{item.system.action.level}}</div>
+                {{/if}}
+                {{#if item.flags.isUsable}}
+                    {{#if item.flags.hasAreaTemplate}}<div class="item-area rollable" style="background-image: url('systems/arsdd/icons/svg/circle-black.svg')"></div>{{/if}}                    
+                    {{#if item.flags.hasAction}}<div class="item-action rollable" style="background-image: url('systems/arsdd/icons/svg/combat-{{item.flags.labels.actionIcon}}.svg')" title="{{item.flags.labels.actionToolTip}}"></div>{{/if}}
+                    {{#if item.flags.hasDamage}}<div class="item-damage rollable" style="background-image: url('systems/arsdd/icons/svg/blood-black.svg')" ></div>{{/if}}
+                    {{#if item.flags.hasHealing}}<div class="item-healing rollable" style="background-image: url('systems/arsdd/icons/svg/heal-black.svg')"></div>{{/if}}
+                    {{#if item.flags.hasActiveEffect}}
+                        {{#each item.flags.effectsActor as |effect e|}}
+                            {{#unless effect.flags.isPermanent}}
+                        <img class="item-image item-effect rollable {{effect.flags.class}}" src="{{effect.icon}}" data-item-id="{{effect.id}}" title="{{effect.label}}"/>
+                            {{/unless}}
+                        {{/each}}
+                    {{/if}}
+                {{/if}}
+            </div>
+
+
+            <div class="item-controls flexrow">
+                {{#if item.flags.allowDelete}}
+                <a class="item-control item-delete" title='{{localize "ARSDD.ItemDelete"}}'><i class="fas fa-trash"></i></a>
+                {{/if}}
+            </div>
+        </li>
+    {{/each}}
+    </ol>
+{{/each}}
+</ol>

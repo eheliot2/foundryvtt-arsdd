@@ -1,0 +1,34 @@
+{
+  "id": "arsdd",
+  "title": "ArsDD",
+  "description": "hack entre ars magica et dd5 pour foundryvtt.",
+  "version": "3.04",
+  "authors": [
+    {
+      "name": "Eric HELIOT"
+    }
+  ],
+  "scripts": [],
+  "esmodules": ["arsdd.js"],
+  "styles": ["arsdd.css"],
+  "packs": [],
+  "languages": [
+    {
+      "lang": "fr",
+      "name": "Français",
+      "path": "lang/fr.json"
+    }
+  ],
+  "socket": true,
+  "gridDistance": 1,
+  "gridUnits": "c",
+  "primaryTokenAttribute": "attributes.hp",
+  "secondaryTokenAttribute": null,
+  "compatibility": {
+    "minimum": "10.290",
+    "verified": "10.290"
+  },
+  "url": "https://arsdd.artaneb.fr/foundryvtt/system/",
+  "manifest": "https://arsdd.artaneb.fr/foundryvtt/system/system.json",
+  "download": "https://arsdd.artaneb.fr/foundryvtt/system/arsdd.zip"
+}

@@ -1,0 +1,236 @@
+<div class="traits">
+    <div class="attributes">
+        <ul class="attributes flexrow">
+            <li class="attribute">
+                <h4 class="attribute-name box-title">{{ localize "ARSDD.Initiative" }}</h4>
+                <div class="attribute-value">{{numberFormat system.attributes.init.value decimals=0 sign=true}} ({{ system.attributes.init.label }})</div>
+                <footer class="attribute-footer">
+                    <span>
+                        <a class="item-control delay-sub1" title='Retard -1'>-</i></a>
+                        Retard {{ system.attributes.init.delay }} 
+                        <a class="item-control delay-add1" title='Retard +1'>+</i></a>
+                    </span>
+                </footer>
+            </li>
+            <li class="attribute">
+                <h4 class="attribute-name box-title">{{ localize "ARSDD.Reaction" }}</h4>
+                <div class="attribute-value multiple">
+                    <input name="system.attributes.resources.action.reaction.value" type="number" value="{{system.attributes.resources.action.reaction.value}}" data-dtype="Number"/>
+                    <span class="sep"> / </span>
+                    <input name="system.attributes.resources.action.reaction.max" type="number" value="{{system.attributes.resources.action.reaction.max}}" data-dtype="Number"/>
+                </div>         
+            </li>
+            <li class="attribute">
+                <h4 class="attribute-name box-title">{{ localize "ARSDD.BonusAction" }}</h4>
+                <div class="attribute-value ">
+                    <input name="system.attributes.resources.action.bonusAction.max" type="number" value="{{system.attributes.resources.action.bonusAction.max}}" data-dtype="Number"/>
+                </div>
+            </li>
+            <li class="attribute">
+                <h4 class="attribute-name box-title">{{ localize "ARSDD.Followers" }} </h4>
+                <div class="attribute-value multiple">
+                    <input name="system.attributes.resources.follower.value" type="number" value="{{system.attributes.resources.follower.value}}" data-dtype="Number"/>
+                    <span class="sep"> / </span>
+                    <input name="system.attributes.resources.follower.max" type="number" value="{{system.attributes.resources.follower.max}}" disabled data-dtype="Number"/>
+                </div>         
+            </li>
+        </ul>
+        <ul class="attributes flexrow">
+            {{#if isPC}}
+            <li class="attribute">
+                <h4 class="attribute-name box-title">{{ localize "ARSDD.Inspiration" }}</h4>
+                <input type="checkbox" name="system.attributes.resources.inspiration" data-dtype="Boolean" {{checked system.attributes.resources.inspiration}}/>                              
+            </li>  
+            <li class="attribute">
+                <h4 class="attribute-name box-title">{{ localize "ARSDD.Confidence" }} </h4>
+                <div class="attribute-value multiple">
+                    <input name="system.attributes.resources.confidence.value" type="number" value="{{system.attributes.resources.confidence.value}}" data-dtype="Number"/>
+                    <span class="sep"> / </span>
+                    <input name="system.attributes.resources.confidence.max" type="number" value="{{system.attributes.resources.confidence.max}}" data-dtype="Number"/>
+                </div>         
+            </li>
+            <li class="attribute">
+                <h4 class="attribute-name box-title">{{ localize 'ARSDD.Destin' }}</h4>
+                <div class="attribute-value">
+                    <input name="system.attributes.resources.destin" type="number" value="{{system.attributes.resources.destin}}" data-dtype="Number"/>
+                </div>
+            </li>
+            <li class="attribute">
+                <h4 class="attribute-name box-title">{{ localize 'ARSDD.Famous' }}</h4>
+                <div class="attribute-value">
+                    <input name="system.attributes.resources.famous" type="number" value="{{system.attributes.resources.famous}}" data-dtype="Number"/>
+                </div>
+            </li>
+            {{else}}
+            <li class="attribute">
+                <h4 class="attribute-name box-title">{{ localize "ARSDD.LegAct" }}</h4>
+                <div class="attribute-value multiple">
+                    <input name="system.attributes.resources.legact.value" type="number" value="{{system.attributes.resources.legact.value}}" data-dtype="Number"/>
+                    <span class="sep"> / </span>
+                    <input name="system.attributes.resources.legact.max" type="number" value="{{system.attributes.resources.legact.max}}" data-dtype="Number"/>
+                </div>         
+            </li>
+            <li class="attribute">
+                <h4 class="attribute-name box-title">{{ localize "ARSDD.LegRes" }}</h4>
+                <div class="attribute-value multiple">
+                    <input name="system.attributes.resources.legres.value" type="number" value="{{system.attributes.resources.legres.value}}" data-dtype="Number"/>
+                    <span class="sep"> / </span>
+                    <input name="system.attributes.resources.legres.max" type="number" value="{{system.attributes.resources.legres.max}}" data-dtype="Number"/>
+                </div>         
+            </li>
+            <li class="attribute">
+                <h4 class="attribute-name box-title">{{ localize "ARSDD.LairAct" }}</h4>
+                <div class="attribute-value multiple">
+                    <input name="system.attributes.resources.lair.value" type="number" value="{{system.attributes.resources.lair.value}}" data-dtype="Number"/>
+                    <span class="sep"> / </span>
+                    <input name="system.attributes.resources.lair.max" type="number" value="{{system.attributes.resources.lair.max}}" data-dtype="Number"/>
+                </div>         
+            </li>
+            {{/if}}
+        </ul>
+        <ul class="attributes flexrow">
+            <li class="attribute">
+                <h4 class="attribute-name box-title">
+                    <input name="system.attributes.resources.custom1.name" type="text" value="{{system.attributes.resources.custom1.name}}" placeholder="Ressource custom1" />
+                </h4>
+                <div class="attribute-value multiple">
+                    <input name="system.attributes.resources.custom1.value" type="number" value="{{system.attributes.resources.custom1.value}}" data-dtype="Number"/>
+                    <span class="sep"> / </span>
+                    <input name="system.attributes.resources.custom1.max" type="number" value="{{system.attributes.resources.custom1.max}}" data-dtype="Number"/>
+                </div>
+                <footer class="attribute-footer">
+                    <label class="checkbox">
+                        <input type="checkbox" name="system.attributes.resources.custom1.recoverShortRest" {{checked system.attributes.resources.custom1.recoverShortRest}}/>Repos court ?
+                    </label>
+                </footer>            
+            </li>
+            <li class="attribute">
+                <h4 class="attribute-name box-title">
+                    <input name="system.attributes.resources.custom2.name" type="text" value="{{system.attributes.resources.custom2.name}}" placeholder="Ressource custom2" />
+                </h4>
+                <div class="attribute-value multiple">
+                    <input name="system.attributes.resources.custom2.value" type="number" value="{{system.attributes.resources.custom2.value}}" data-dtype="Number"/>
+                    <span class="sep"> / </span>
+                    <input name="system.attributes.resources.custom2.max" type="number" value="{{system.attributes.resources.custom2.max}}" data-dtype="Number"/>
+                </div>
+                <footer class="attribute-footer">
+                    <label class="checkbox">
+                        <input type="checkbox" name="system.attributes.resources.custom2.recoverShortRest" {{checked system.attributes.resources.custom2.recoverShortRest}}/> Repos court ?
+                    </label>
+                </footer>  
+            </li>
+            <li class="attribute">
+                <h4 class="attribute-name box-title">
+                    <input name="system.attributes.resources.custom3.name" type="text" value="{{system.attributes.resources.custom3.name}}" placeholder="Ressource custom3"/>
+                </h4>
+                <div class="attribute-value multiple">
+                    <input name="system.attributes.resources.custom3.value" type="number" value="{{system.attributes.resources.custom3.value}}" data-dtype="Number"/>
+                    <span class="sep"> / </span>
+                    <input name="system.attributes.resources.custom3.max" type="number" value="{{system.attributes.resources.custom3.max}}" data-dtype="Number"/>
+                </div>
+                <footer class="attribute-footer">
+                    <label class="checkbox">
+                        <input type="checkbox" name="system.attributes.resources.custom3.recoverShortRest" {{checked system.attributes.resources.custom3.recoverShortRest}}/> Repos court ?
+                    </label>
+                </footer>  
+            </li>
+            <li class="attribute">
+                <h4 class="attribute-name box-title">
+                    <input name="system.attributes.resources.custom4.name" type="text" value="{{system.attributes.resources.custom4.name}}" placeholder="Ressource custom4"/>
+                </h4>
+                <div class="attribute-value multiple">
+                    <input name="system.attributes.resources.custom4.value" type="number" value="{{system.attributes.resources.custom4.value}}" data-dtype="Number"/>
+                    <span class="sep"> / </span>
+                    <input name="system.attributes.resources.custom4.max" type="number" value="{{system.attributes.resources.custom4.max}}" data-dtype="Number"/>
+                </div>
+                <footer class="attribute-footer">
+                    <label class="checkbox">
+                        <input type="checkbox" name="system.attributes.resources.custom4.recoverShortRest" {{checked system.attributes.resources.custom4.recoverShortRest}}/> Repos court ?
+                    </label>
+                </footer>  
+            </li>
+        </ul>
+    </div>
+    <div class="form">
+
+    </div>
+
+    <div class="form-group flexrow">
+        <div class="form-group">
+            <label>{{ localize "ARSDD.Race" }}</label>
+            <a class="trait-selector" data-options="groupRaces" data-target="system.attributes.groupRace"><i class="fas fa-cog"></i></a>
+            <ul class="traits-list">
+            {{#each system.attributes.groupRace.selected as |v k|}}
+                <li class="tag {{k}}">{{v}}</li>
+            {{/each}}
+            </ul>
+        </div>
+        <div class="form-group">
+            <label>Statut social</label>
+            <div class="form-fields">
+                <select name="system.attributes.socialStatus">
+                    <option value=""></option>
+                    {{selectOptions config.socialStatus selected=system.attributes.socialStatus}}
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="form-group flexrow">
+        <div class="form-group">
+            <label>{{ localize "ARSDD.Movement" }}</label>
+            <a class="config-button" data-action="movement" title="{{localize 'ARSDD.MovementConfig'}}"><i class="fas fa-cog"></i></a>
+           <ul class="traits-list">
+               {{#each movement as |v k|}}
+               <li class="tag {{k}}">{{v}}</li>
+               {{/each}}
+           </ul>
+       </div>
+       <div class="form-group">
+           <label>{{localize "ARSDD.Senses"}}</label>
+           <a class="config-button" data-action="senses" title="{{localize 'ARSDD.SensesConfig'}}"><i class="fas fa-cog"></i></a>
+           <ul class="traits-list">
+           {{#each senses as |v k|}}
+               <li class="tag {{k}}">{{v}}</li>
+           {{/each}}
+           </ul>
+       </div>
+    </div>
+
+
+    <div class="form-group">
+    </div>
+    <ul class="attributes flexrow">
+        {{#if isPC}}
+        <li class="attribute">
+            <h4 class="attribute-name box-title">PX</h4>
+            <div class="attribute-value">
+                <input name="system.attributes.xp" type="text" value="{{system.attributes.xp}}" placeholder="0" data-dtype="Number"/>
+           </div>
+        </li>
+        <li class="attribute">
+            <h4 class="attribute-name box-title">{{ localize "ARSDD.Level" }}</h4>
+            <div class="attribute-value">
+                {{system.attributes.level}}
+           </div>
+        </li>
+        <li class="attribute">
+            <h4 class="attribute-name box-title">Tier</h4>
+            <div class="attribute-value">
+                {{system.attributes.tier}}
+           </div>
+        </li>
+        <li>
+            <h4>Vertus : {{ system.attributes.feat.virtue }} / Max {{ system.attributes.feat.virtuemax }} 
+            <br>Vertus majeures : {{ system.attributes.feat.major }} / Max {{ system.attributes.feat.majormax }}
+            <br>Vices : {{ system.attributes.feat.flaw }} </h4>
+        </li>
+        {{else}}
+        <li class="attribute">
+            <h4 class="attribute-name box-title">{{ localize "ARSDD.CR" }}</h4>
+            <div class="attribute-value">
+                <input name="system.attributes.cr" type="text" value="{{system.attributes.cr}}" placeholder="0" data-dtype="Number"/>
+            </div>
+        </li>
+        {{/if}}
+    </ul>
+</div>

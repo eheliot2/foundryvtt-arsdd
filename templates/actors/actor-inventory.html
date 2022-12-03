@@ -1,0 +1,141 @@
+<div class="flexrow">
+    <div class="flexcol flex-c3 ">
+        <div class="form-group flex-c13">
+            <label>Ressources</label>
+            <label>Sur soi</label>
+            <label>Maison</label>
+        </div>
+        <div class="form-group flex-c13">
+            <label>PO</label>
+           <input type="text" name="system.resources.currency.value" value="{{system.resources.currency.value}}" data-dtype="Number"/>
+           <input type="text" name="system.resources.currency.home" value="{{system.resources.currency.home}}" data-dtype="Number"/>
+        </div>
+        <div class="form-group flex-c13">
+            <label>{{localize "ARSDD.SkillAqu"}}</label>
+            <input type="text" name="system.resources.virtus.aqu.value" value="{{system.resources.virtus.aqu.value}}" data-dtype="Number"/>
+            <input type="text" name="system.resources.virtus.aqu.home" value="{{system.resources.virtus.aqu.home}}" data-dtype="Number"/>
+        </div>
+        <div class="form-group flex-c13">
+            <label>{{localize "ARSDD.SkillAur"}}</label>
+            <input type="text" name="system.resources.virtus.aur.value" value="{{system.resources.virtus.aur.value}}" data-dtype="Number"/>
+            <input type="text" name="system.resources.virtus.aur.home" value="{{system.resources.virtus.aur.home}}" data-dtype="Number"/>
+        </div>
+        <div class="form-group flex-c13">
+            <label>{{localize "ARSDD.SkillIgn"}}</label>
+            <input type="text" name="system.resources.virtus.ign.value" value="{{system.resources.virtus.ign.value}}" data-dtype="Number"/>
+            <input type="text" name="system.resources.virtus.ign.home" value="{{system.resources.virtus.ign.home}}" data-dtype="Number"/>
+        </div>
+        <div class="form-group flex-c13">
+            <label>{{localize "ARSDD.SkillIma"}}</label>
+            <input type="text" name="system.resources.virtus.ima.value" value="{{system.resources.virtus.ima.value}}" data-dtype="Number"/>
+            <input type="text" name="system.resources.virtus.ima.home" value="{{system.resources.virtus.ima.home}}" data-dtype="Number"/>
+        </div>
+        <div class="form-group flex-c13">
+            <label>{{localize "ARSDD.SkillLum"}}</label>
+            <input type="text" name="system.resources.virtus.lum.value" value="{{system.resources.virtus.lum.value}}" data-dtype="Number"/>
+            <input type="text" name="system.resources.virtus.lum.home" value="{{system.resources.virtus.lum.home}}" data-dtype="Number"/>
+        </div>
+        <div class="form-group flex-c13">
+            <label>{{localize "ARSDD.SkillNoc"}}</label>
+            <input type="text" name="system.resources.virtus.noc.value" value="{{system.resources.virtus.noc.value}}" data-dtype="Number"/>
+            <input type="text" name="system.resources.virtus.noc.home" value="{{system.resources.virtus.noc.home}}" data-dtype="Number"/>
+        </div>
+        <div class="form-group flex-c13">
+            <label>{{localize "ARSDD.SkillTer"}}</label>
+            <input type="text" name="system.resources.virtus.ter.value" value="{{system.resources.virtus.ter.value}}" data-dtype="Number"/>
+            <input type="text" name="system.resources.virtus.ter.home" value="{{system.resources.virtus.ter.home}}" data-dtype="Number"/>
+        </div>
+        <div class="form-group flex-c13">
+            <label>{{localize "ARSDD.SkillCor"}}</label>
+            <input type="text" name="system.resources.virtus.cor.value" value="{{system.resources.virtus.cor.value}}" data-dtype="Number"/>
+            <input type="text" name="system.resources.virtus.cor.home" value="{{system.resources.virtus.cor.home}}" data-dtype="Number"/>
+        </div>   
+        <div class="form-group flex-c13">
+            <label>{{localize "ARSDD.SkillFat"}}</label>
+            <input type="text" name="system.resources.virtus.fat.value" value="{{system.resources.virtus.fat.value}}" data-dtype="Number"/>
+            <input type="text" name="system.resources.virtus.fat.home" value="{{system.resources.virtus.fat.home}}" data-dtype="Number"/>
+        </div>
+        <div class="form-group flex-c13">
+            <label>{{localize "ARSDD.SkillMen"}}</label>
+            <input type="text" name="system.resources.virtus.men.value" value="{{system.resources.virtus.men.value}}" data-dtype="Number"/>
+            <input type="text" name="system.resources.virtus.men.home" value="{{system.resources.virtus.men.home}}" data-dtype="Number"/>
+        </div>
+        <div class="form-group flex-c13">
+            <label>{{localize "ARSDD.SkillSpi"}}</label>
+            <input type="text" name="system.resources.virtus.spi.value" value="{{system.resources.virtus.spi.value}}" data-dtype="Number"/>
+            <input type="text" name="system.resources.virtus.spi.home" value="{{system.resources.virtus.spi.home}}" data-dtype="Number"/>
+        </div>
+        <div class="form-group flex-c13">
+            <label>{{localize "ARSDD.SkillVim"}}</label>
+            <input type="text" name="system.resources.virtus.vim.value" value="{{system.resources.virtus.vim.value}}" data-dtype="Number"/>
+            <input type="text" name="system.resources.virtus.vim.home" value="{{system.resources.virtus.vim.home}}" data-dtype="Number"/>
+        </div> 
+    </div>
+    <div class="form-group-col flex-2c3">
+        <div class="inventory-filters flexrow">
+            <ul class="filter-list flexrow" data-filter="inventory">
+                <li class="filter-item" data-filter="equipped">{{localize "ARSDD.Equipped"}}</li>
+                <li class="filter-item" data-filter="attuned">{{localize "ARSDD.Attuned"}}</li>
+            </ul>
+        </div>
+
+        <ol class="items-list inventory-list">
+        {{#each sections as |section sid|}}
+            <li class="items-header flexrow">
+                <h3 class="item-name flexrow">{{localize section.label}}</h3>
+            </li>
+
+            <ol class="item-list">
+            {{#each section.items as |item iid|}}
+                <li class="item flexrow {{section.css}}"
+                    data-item-id="{{#if section.editableName}}{{iid}}{{else}}{{item._id}}{{/if}}">
+                    <div class="item-name flexrow">
+                        <div class="item-image" style="background-image: url('{{item.img}}')"></div>
+                        <h4 class="item-edit rollable">{{item.name~}}</h4>
+                        {{#if item.flags.isUsable}}
+                            {{#if item.flags.hasAreaTemplate}}<div class="item-area rollable" style="background-image: url('systems/arsdd/icons/svg/circle-black.svg')"></div>{{/if}}
+                            {{#if item.flags.hasAction}}<div class="item-action rollable" style="background-image: url('systems/arsdd/icons/svg/combat-{{item.flags.labels.actionIcon}}.svg')" title="{{item.flags.labels.actionToolTip}}"></div>{{/if}}
+                            {{#if item.flags.hasDamage}}<div class="item-damage rollable" style="background-image: url('systems/arsdd/icons/svg/blood-black.svg')"></div>{{/if}}
+                            {{#if item.flags.hasHealing}}<div class="item-healing rollable" style="background-image: url('systems/arsdd/icons/svg/heal-black.svg')"></div>{{/if}}
+                            {{#if item.flags.hasActiveEffect}}
+                                {{#each item.flags.effectsActor as |effect e|}}
+                                    {{#unless effect.flags.isPermanent}}
+                                <img class="item-image item-effect rollable {{effect.flags.class}}" src="{{effect.icon}}" data-item-id="{{effect.id}}" title="{{effect.label}}"/>
+                                    {{/unless}}
+                                {{/each}}
+                            {{/if}}     
+                        {{/if}}
+                    </div>
+
+                    <div class="flexrow">
+                        {{ item.flags.use }}
+                    </div>
+                    <div class="item-controls flexrow">
+                        {{#unless item.physicalItem.equipped }}
+                            {{#unless item.physicalItem.home}}
+                            <a class="item-control item-toggle" title='Sac à dos'><img src="systems/arsdd/icons/svg/icon-bag-brown.svg" style="border:none;"/></a>
+                            {{/unless}}
+                        {{/unless}}
+                        {{#unless item.physicalItem.equipped}}
+                        <a class="item-control item-toggle item-toggle-home {{item.labels.toggleHomeClass}}" title='{{item.labels.toggleHomeTitle}}'><i class="fas fa-home"></i></a>
+                        {{/unless}}
+                        {{#unless item.physicalItem.home}}
+                        <a class="item-control item-toggle item-toggle-equipped {{item.labels.toggleEquippedClass}}" title='{{item.labels.toggleEquippedTitle}}'><i class="fas fa-shield-alt"></i></a>
+                        {{/unless}}
+                        {{#if item.physicalItem.attunement}}
+                        <div class="item-detail attunement">
+                            <i class="fas {{item.labels.attunement.icon}} {{item.labels.attunement.cls}}" title="{{ item.labels.attunement.title }}"></i>
+                        </div>
+                        {{/if}}
+                        {{#if item.flags.allowDelete}}
+                        <a class="item-control item-delete" title='{{localize "ARSDD.ItemDelete"}}'><i class="fas fa-trash"></i></a>
+                        {{/if}}
+        
+                    </div>
+                </li>
+            {{/each}}
+            </ol>
+        {{/each}}
+        </ol>
+    </div>
+</div>

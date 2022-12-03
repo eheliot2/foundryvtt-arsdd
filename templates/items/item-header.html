@@ -1,0 +1,80 @@
+<header class="sheet-header loot-header flexrow">
+    <img class="profile" src="{{item.img}}" title="{{item.name}}" data-edit="img"/>
+    <div class="flexcol">
+        <div class="header-details flexrow">
+            <h1 class="charname">
+                <input name="name" type="text" value="{{item.name}}" placeholder="{{ localize 'ARSDD.ItemName' }}"/>
+            </h1>
+    
+            <div class="item-subtitle">
+                <h4 class="item-type">{{labels.itemType}}</h4>
+                {{labels.subType}}
+            </div>
+        </div>
+    
+        <div class="form-group stacked" >
+            <div class="form-fields">
+            {{#if item.isOwned}}
+                <label class="checkbox">
+                    <input type="checkbox" name="flags.allowDelete" {{checked item.flags.allowDelete}}/> Supprimer autorisé ?
+                </label>
+
+                {{#if flags.isSpell}}
+                <label class="checkbox">
+                    <input type="checkbox" name="system.learning.learnt" {{checked system.learning.learnt}}/> {{ localize "ARSDD.SpellLearnt" }}
+                </label>
+                <label class="checkbox">
+                    <input type="text" class="header" name="system.learning.xp" value="{{system.learning.xp}}"/> {{ localize "ARSDD.Xp" }}
+                </label>
+                    {{#if system.learning.learnt}}
+                <label class="checkbox">
+                    <input type="text" class="header" name="system.learning.score" value="{{system.learning.score}}"/> {{ localize "ARSDD.SpellMasterised" }}
+                </label>
+                proprietes de maitrise
+  
+                    {{/if}}              
+                {{/if}}
+
+                {{#if flags.isFeat}}
+                <label class="checkbox">
+                    {{ localize "ARSDD.FeatFrequency" }}
+                    <input type="text" class="header" name="system.learning.frequency" value="{{system.learning.frequency}}"/> fois
+                </label>
+                {{/if}}
+
+                {{#if flags.isPhysical}}
+                    {{#unless system.physicalItem.equipped}}
+                <label class="checkbox">
+                    <input type="checkbox" name="system.physicalItem.home" {{checked system.physicalItem.home}}/> {{ localize "ARSDD.Home" }}
+                </label>
+                    {{/unless}}
+                {{/if}}
+
+                {{#if flags.isEquipable}}
+                    {{#unless system.physicalItem.home}}
+                <label class="checkbox">
+                    <input type="checkbox" name="system.physicalItem.equipped" {{checked system.physicalItem.equipped}}/> {{ localize "ARSDD.Equipped" }}
+                </label>
+                    {{/unless}}
+                {{/if}}
+            {{/if}} 
+
+            {{#if flags.isEquipable}}
+            <label class="checkbox">
+                <input type="checkbox" name="system.physicalItem.attunement" {{checked system.physicalItem.attunement}}/> {{ localize "ARSDD.Attunement" }}
+            </label>
+
+                {{#if item.isOwned}}
+                    {{#if system.physicalItem.attunement }}
+            <label class="checkbox">
+                <input type="checkbox" name="system.physicalItem.attuned" {{checked system.physicalItem.attuned}}/> {{ localize "ARSDD.Attuned" }}
+            </label>
+                    {{/if}}      
+                {{/if}}    
+            {{/if}}   
+
+            </div>
+        </div>
+    </div>
+
+</header>

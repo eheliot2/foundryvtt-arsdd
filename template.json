@@ -1,0 +1,1265 @@
+{
+  "Actor": {
+    "types": ["character", "npc"],
+    "templates": {
+      "common": {
+        "abilities": {
+          "str": {
+            "value": 0
+          },
+          "dex": {
+            "value": 0
+          },
+          "con": {
+            "value": 0
+          },
+          "int": {
+            "value": 0
+          },
+          "wis": {
+            "value": 0
+          },
+          "cha": {
+            "value": 0
+          }
+        },
+        "attributes": {
+          "size": 0,
+          "socialStatus":0,
+          "hp": {
+            "value": 25,
+            "max":25,
+            "temp": 0,
+            "tempmax": 0,
+            "regen": 0,
+            "bonus":0
+          },
+          "mp": {
+            "value": 9,
+            "max":9,
+            "temp": 0,
+            "tempmax": 0,
+            "regen": 0,
+            "bonus":0
+          },
+          "init": {
+            "skill": "mel",
+            "bonus": 0
+          },
+          "movement": {
+            "burrow": 0,
+            "climb": 0,
+            "fly": 0,
+            "swim": 0,
+            "walk": 6,
+            "hover": false,
+            "travelRole":[],
+            "travelOption":0
+          },
+          "senses": {
+            "brightvision":100,
+            "dimvision":6,
+            "darkvision": 0,
+            "hearingsight": 0,
+            "touchsight": 0,
+            "smellingsight": 0,
+            "truesight": 0,
+            "truesightlevel":0
+          },
+          "groupRace" : {
+            "value" : [],
+            "custom": ""
+          },
+          "resources": {
+            "action" : {
+              "reaction" : {
+                "value":1,
+                "max":1
+              },
+              "bonusAction" : {
+                "max":1
+              }
+            },
+            "follower" : {
+              "value":0,
+              "bonus":0
+            },
+            "custom1":{
+              "name":"",
+              "value":0,
+              "max":0,
+              "recoverShortRest":false
+            },
+            "custom2":{
+              "name":"",
+              "value":0,
+              "max":0,
+              "recoverShortRest":false
+            },
+            "custom3":{
+              "name":"",
+              "value":0,
+              "max":0,
+              "recoverShortRest":false
+            },
+            "custom4":{
+              "name":"",
+              "value":0,
+              "max":0,
+              "recoverShortRest":false
+            },
+            "currency": {
+              "value": 0,
+              "home":0
+            },
+            "ration": {
+              "value": 0,
+              "home":0
+            },
+            "virtus": {
+              "aqu": {
+                "value": 0,
+                "home":0
+              },
+              "aur": {
+                "value": 0,
+                "home":0
+              },	
+              "ign": {
+                "value": 0,
+                "home":0
+              },
+              "ima": {
+                "value": 0,
+                "home":0
+              },
+              "lum": {
+                "value": 0,
+                "home":0
+              },		
+              "noc": {
+                "value": 0,
+                "home":0
+              },		
+              "ter": {
+                "value": 0,
+                "home":0
+              },		
+              "cor": {
+                "value": 0,
+                "home":0
+              },		
+              "fat": {
+                "value": 0,
+                "home":0
+              },		
+              "men": {
+                "value": 0,
+                "home":0
+              },		
+              "spi": {
+                "value": 0,
+                "home":0
+              },		
+              "vim": {
+                "value": 0,
+                "home":0
+              }		
+            }
+          }
+        },
+        "cargo": {
+          "crew": [],
+          "passengers": []
+        },
+        "skills": {
+          "ath": {
+            "xp":0,
+            "value":0,
+            "type":1,
+            "base":5,
+            "bonus":0,
+            "ability": "str",
+            "display":true,
+            "rename":false,
+            "label2":""
+          },
+          "ste": {
+            "xp":0,
+            "value":0,
+            "type":1,
+            "base":5,
+            "bonus":0,
+            "ability": "dex",
+            "display":true,
+            "rename":false,
+            "label2":""
+          },
+          "mel": {
+            "xp":0,
+            "value":0,
+            "type":1,
+            "base":5,
+            "bonus":0,
+            "ability": "str",
+            "display":true,
+            "rename":false,
+            "label2":""
+          },
+          "prc": {
+            "xp":0,
+            "value":0,
+            "type":1,
+            "base":5,
+            "bonus":0,
+            "ability": "wis",
+            "display":true,
+            "rename":false,
+            "label2":""
+          },
+          "sur": {
+            "xp":0,
+            "value":0,
+            "type":1,
+            "base":5,
+            "bonus":0,
+            "ability": "con",
+            "display":true,
+            "rename":false,
+            "label2":""
+          },          
+          "sho": {
+            "xp":0,
+            "value":0,
+            "type":1,
+            "base":5,
+            "bonus":0,
+            "ability": "dex",
+            "display":true,
+            "rename":false,
+            "label2":""
+          },          
+          "dea": {
+            "xp":0,
+            "value":0,
+            "type":1,
+            "base":5,
+            "bonus":0,
+            "ability": "con",
+            "display":true,
+            "rename":false,
+            "label2":""
+          },          
+          "med": {
+            "xp":0,
+            "value":0,
+            "type":2,
+            "base":5,
+            "bonus":0,
+            "ability": "wis",
+            "display":true,
+            "rename":false,
+            "label2":""
+          },
+          "prf": {
+            "xp":0,
+            "value":0,
+            "type":2,
+            "base":5,
+            "bonus":0,
+            "ability": "cha",
+            "display":true,
+            "rename":false,
+            "label2":""
+          },
+          "cra": {
+            "xp":0,
+            "value":0,
+            "type":2,
+            "base":5,
+            "bonus":0,
+            "ability": "dex",
+            "display":true,
+            "rename":false,
+            "label2":""
+          },
+          "wri": {
+            "xp":0,
+            "value":0,
+            "type":2,
+            "base":5,
+            "bonus":0,
+            "ability": "dex",
+            "display":true,
+            "rename":false,
+            "label2":""
+          },
+          "arl": {
+            "xp":0,
+            "value":0,
+            "type":2,
+            "base":5,
+            "bonus":0,
+            "ability": "int",
+            "display":true,
+            "rename":false,
+            "label2":""
+          },
+          "hun": {
+            "xp":0,
+            "value":0,
+            "type":2,
+            "base":5,
+            "bonus":0,
+            "ability": "wis",
+            "display":true,
+            "rename":false,
+            "label2":""
+          },
+          "slt": {
+            "xp":0,
+            "value":0,
+            "type":2,
+            "base":5,
+            "bonus":0,
+            "ability": "dex",
+            "display":true,
+            "rename":false,
+            "label2":""
+          },
+          "ani": {
+            "xp":0,
+            "value":0,
+            "type":2,
+            "base":5,
+            "bonus":0,
+            "ability": "wis",
+            "display":true,
+            "rename":false,
+            "label2":""
+          },
+          "art": {
+            "xp":0,
+            "value":0,
+            "type":2,
+            "base":5,
+            "bonus":0,
+            "ability": "dex",
+            "display":true,
+            "rename":false,
+            "label2":""
+          },
+          "inv": {
+            "xp":0,
+            "value":0,
+            "type":2,
+            "base":5,
+            "bonus":0,
+            "ability": "int",
+            "display":true,
+            "rename":false,
+            "label2":""
+          },
+          "nav": {
+            "xp":0,
+            "value":0,
+            "type":2,
+            "base":5,
+            "bonus":0,
+            "ability": "dex",
+            "display":true,
+            "rename":false,
+            "label2":""
+          },
+          "taw": {
+            "xp":0,
+            "value":0,
+            "type":2,
+            "base":5,
+            "bonus":0,
+            "ability": "con",
+            "display":true,
+            "rename":false,
+            "label2":""
+
+          },
+          "arc": {
+            "xp":0,
+            "value":0,
+            "type":3,
+            "base":5,
+            "bonus":0,
+            "ability": "int",
+            "display":true,
+            "rename":false,
+            "label2":""
+          },
+          "eru": {
+            "xp":0,
+            "value":0,
+           "type":3,
+            "base":5,
+            "bonus":0,
+            "ability": "int",
+            "display":true,
+            "rename":false,
+            "label2":""
+          },
+          "for": {
+            "xp":0,
+            "value":0,
+            "type":3,
+            "base":5,
+            "bonus":0,
+            "ability": "int",
+            "display":true,
+            "rename":false,
+            "label2":""
+          },
+          "nat": {
+            "xp":0,
+            "value":0,
+            "type":3,
+            "base":5,
+            "bonus":0,
+            "ability": "int",
+            "display":true,
+            "rename":false,
+            "label2":""
+          },
+          "er1": {
+            "xp":0,
+            "value":0,
+            "type":3,
+            "base":5,
+            "bonus":0,
+            "ability": "int",
+            "display":false,
+            "rename":true,
+            "label2":""
+          },
+          "er2": {
+            "xp":0,
+            "value":0,
+            "type":3,
+            "base":5,
+            "bonus":0,
+            "ability": "int",
+            "display":false,
+            "rename":true,
+            "label2":""
+          },
+          "er3": {
+            "xp":0,
+            "value":0,
+            "type":3,
+            "base":5,
+            "bonus":0,
+            "ability": "int",
+            "display":false,
+            "rename":true,
+            "label2":""
+          },
+          "er4": {
+            "xp":0,
+            "value":0,
+            "type":3,
+            "base":5,
+            "bonus":0,
+            "ability": "int",
+            "display":false,
+            "rename":true,
+            "label2":""
+          },
+          "dis": {
+            "xp":0,
+            "value":0,
+            "type":5,
+            "base":5,
+            "bonus":0,
+            "ability": "wis",
+            "display":true,
+            "rename":false,
+            "label2":""
+          },
+          "ins": {
+            "xp":0,
+            "value":0,
+            "type":5,
+            "base":5,
+            "bonus":0,
+            "ability": "wis",
+            "display":true,
+            "rename":false,
+            "label2":""
+          },
+          "per": {
+            "xp":0,
+            "value":0,
+            "type":5,
+            "base":5,
+            "bonus":0,
+            "ability": "cha",
+            "display":true,
+            "rename":false,
+            "label2":""
+          },
+          "dec": {
+            "xp":0,
+            "value":0,
+            "type":5,
+            "base":5,
+            "bonus":0,
+            "ability": "cha",
+            "display":true,
+            "rename":false,
+            "label2":""
+          },
+          "cre": {
+            "xp":0,
+            "value":0,
+            "type":6,
+            "base":5,
+            "bonus":0,
+            "ability": "int",
+            "display":true,
+            "rename":false,
+            "label2":""
+          },
+          "int": {
+            "xp":0,
+            "value":0,
+            "type":6,
+            "base":5,
+            "bonus":0,
+            "ability": "int",
+            "display":true,
+            "rename":false,
+            "label2":""
+          },
+          "mut": {
+            "xp":0,
+            "value":0,
+            "type":6,
+            "base":5,
+            "bonus":0,
+            "ability": "int",
+            "display":true,
+            "rename":false,
+            "label2":""
+          },
+          "ped": {
+            "xp":0,
+            "value":0,
+            "type":6,
+            "base":5,
+            "bonus":0,
+            "ability": "int",
+            "display":true,
+            "rename":false,
+            "label2":""
+          },
+          "reg": {
+            "xp":0,
+            "value":0,
+            "type":6,
+            "base":5,
+            "bonus":0,
+            "ability": "int",
+            "display":true,
+            "rename":false,
+            "label2":""
+          },
+          "sum": {
+            "xp":0,
+            "value":0,
+           "type":6,
+            "base":5,
+            "bonus":0,
+            "ability": "int",
+            "display":true,
+            "rename":false,
+            "label2":""
+          },
+          "aqu": {
+            "xp":0,
+            "value":0,
+            "type":6,
+            "base":5,
+            "bonus":0,
+            "ability": "int",
+            "display":true,
+            "rename":false,
+            "label2":""
+          },
+          "aur": {
+            "xp":0,
+            "value":0,
+            "type":6,
+            "base":5,
+            "bonus":0,
+            "ability": "int",
+            "display":true,
+            "rename":false,
+            "label2":""
+          },
+          "ign": {
+            "xp":0,
+            "value":0,
+            "type":6,
+            "base":5,
+            "bonus":0,
+            "ability": "int",
+            "display":true,
+            "rename":false,
+            "label2":""
+          },
+          "ter": {
+            "xp":0,
+            "value":0,
+            "type":6,
+            "base":5,
+            "bonus":0,
+            "ability": "int",
+            "display":true,
+            "rename":false,
+            "label2":""
+          },
+          "lum": {
+            "xp":0,
+            "value":0,
+            "type":6,
+            "base":5,
+            "bonus":0,
+            "ability": "int",
+            "display":true,
+            "rename":false,
+            "label2":""
+          },
+          "ima": {
+            "xp":0,
+            "value":0,
+            "type":6,
+            "base":5,
+            "bonus":0,
+            "ability": "int",
+            "display":true,
+            "rename":false,
+            "label2":""
+          },
+          "noc": {
+            "xp":0,
+            "value":0,
+            "type":6,
+            "base":5,
+            "bonus":0,
+            "ability": "int",
+            "display":true,
+            "rename":false,
+            "label2":""
+          },
+          "cor": {
+            "xp":0,
+            "value":0,
+            "type":6,
+            "base":5,
+            "bonus":0,
+            "ability": "int",
+            "display":true,
+            "rename":false,
+            "label2":""
+          },
+          "fat": {
+            "xp":0,
+            "value":0,
+            "type":6,
+            "base":5,
+            "bonus":0,
+            "ability": "int",
+            "display":true,
+            "rename":false,
+            "label2":""
+          },
+          "men": {
+            "xp":0,
+            "value":0,
+            "type":6,
+            "base":5,
+            "bonus":0,
+            "ability": "int",
+            "display":true,
+            "rename":false,
+            "label2":""
+          },
+          "spi": {
+            "xp":0,
+            "value":0,
+            "type":6,
+            "base":5,
+            "bonus":0,
+            "ability": "int",
+            "display":true,
+            "rename":false,
+            "label2":""
+          },
+          "vim": {
+            "xp":0,
+            "value":0,
+            "type":6,
+            "base":5,
+            "bonus":0,
+            "ability": "int",
+            "display":true,
+            "rename":false,
+            "label2":""
+          },
+          "ats": {
+            "xp":0,
+            "value":0,
+            "type":7,
+            "base":5,
+            "bonus":0,
+            "ability": "dex",
+            "display":false,
+            "rename":false,
+            "label2":""
+          },
+          "chf": {
+            "xp":0,
+            "value":0,
+            "type":7,
+            "base":5,
+            "bonus":0,
+            "ability": "wis",
+            "display":false,
+            "rename":false,
+            "label2":""
+          },
+          "chd": {
+            "xp":0,
+            "value":0,
+           "type":7,
+            "base":5,
+            "bonus":0,
+            "ability": "str",
+            "display":false,
+            "rename":false,
+            "label2":""
+          },
+          "itm": {
+            "xp":0,
+            "value":0,
+           "type":7,
+            "base":5,
+            "bonus":0,
+            "ability": "cha",
+            "display":false,
+            "rename":false,
+            "label2":""
+          },
+          "bos": {
+            "xp":0,
+            "value":0,
+           "type":7,
+            "base":5,
+            "bonus":0,
+            "ability": "cha",
+            "display":false,
+            "rename":false,
+            "label2":""
+          },
+          "re1": {
+            "xp":0,
+            "value":0,
+            "type":8,
+            "base":5,
+            "bonus":0,
+            "ability": "cha",
+            "display":false,
+            "rename":true,
+            "label2":""
+          },
+          "re2": {
+            "xp":0,
+            "value":0,
+            "type":8,
+            "base":5,
+            "bonus":0,
+            "ability": "cha",
+            "display":false,
+            "rename":true,
+            "label2":""
+          },
+          "re3": {
+            "xp":0,
+            "value":0,
+            "type":8,
+            "base":5,
+            "bonus":0,
+            "ability": "cha",
+            "display":false,
+            "rename":true,
+            "label2":""
+          },
+          "re4": {
+            "xp":0,
+            "value":0,
+           "type":8,
+            "base":5,
+            "bonus":0,
+            "ability": "cha",
+            "display":false,
+            "rename":true,
+            "label2":""
+          },
+          "re5": {
+            "xp":0,
+            "value":0,
+            "type":8,
+            "base":5,
+            "bonus":0,
+            "ability": "cha",
+            "display":false,
+            "rename":true,
+            "label2":""
+          },
+          "re6": {
+            "xp":0,
+            "value":0,
+            "type":8,
+            "base":5,
+            "bonus":0,
+            "ability": "cha",
+            "display":false,
+            "rename":true,
+            "label2":""
+          },
+          "re7": {
+            "xp":0,
+            "value":0,
+            "type":8,
+            "base":5,
+            "bonus":0,
+            "ability": "cha",
+            "display":false,
+            "rename":true,
+            "label2":""
+          },
+          "re8": {
+            "xp":0,
+            "value":0,
+            "type":8,
+            "base":5,
+            "bonus":0,
+            "ability": "cha",
+            "display":false,
+            "rename":true,
+            "label2":""
+          },
+          "lg1": {
+            "xp":0,
+            "value":0,
+            "type":4,
+            "base":5,
+            "bonus":0,
+            "ability": "cha",
+            "display":false,
+            "rename":true,
+            "label2":""
+          },
+          "lg2": {
+            "xp":0,
+            "value":0,
+            "type":4,
+            "base":5,
+            "bonus":0,
+            "ability": "cha",
+            "display":false,
+            "rename":true,
+            "label2":""
+          },
+          "lg3": {
+            "xp":0,
+            "value":0,
+            "type":4,
+            "base":5,
+            "bonus":0,
+            "ability": "cha",
+            "display":false,
+            "rename":true,
+            "label2":""
+          },
+          "lg4": {
+            "xp":0,
+            "value":0,
+            "type":4,
+            "base":5,
+            "bonus":0,
+            "ability": "cha",
+            "display":false,
+            "rename":true,
+            "label2":""
+          }
+        },
+        "biography": {
+          "value": "",
+          "public": ""
+        },
+        "effectAttributes": {
+          "attack": {
+            "melee": 0,
+            "shoot": 0,
+            "str": 0,
+            "dex": 0,
+            "con": 0,
+            "wis": 0,
+            "int": 0,
+            "cha": 0
+          },
+          "damage": {
+            "physical": "",
+            "radiant": "",
+            "fire": "",
+            "lightning": "",
+            "thunder": "",
+            "acid": "",
+            "cold": "",
+            "necrotic": "",
+            "poison": "",
+            "force": "",
+            "psychic": ""
+          },
+          "pierceArmor": {
+            "physical": 0,
+            "radiant": 0,
+            "fire": 0,
+            "lightning": 0,
+            "thunder": 0,
+            "acid": 0,
+            "cold": 0,
+            "necrotic": 0,
+            "poison": 0,
+            "force": 0,
+            "psychic": 0
+          },
+          "pierceResistance": {
+            "physical": 0,
+            "radiant": 0,
+            "fire": 0,
+            "lightning": 0,
+            "thunder": 0,
+            "acid": 0,
+            "cold": 0,
+            "necrotic": 0,
+            "poison": 0,
+            "force": 0,
+            "psychic": 0
+          },
+          "pierceImmunity": {
+            "physical": 0,
+            "radiant": 0,
+            "fire": 0,
+            "lightning": 0,
+            "thunder": 0,
+            "acid": 0,
+            "cold": 0,
+            "necrotic": 0,
+            "poison": 0,
+            "force": 0,
+            "psychic": 0
+          },
+          "defense": {
+            "melee": 0,
+            "shoot": 0,
+            "str": 0,
+            "dex": 0,
+            "con": 0,
+            "wis": 0,
+            "int": 0,
+            "cha": 0
+          },
+          "armor": {
+            "physical": 0,
+            "radiant": 0,
+            "fire": 0,
+            "lightning": 0,
+            "thunder": 0,
+            "acid": 0,
+            "cold": 0,
+            "necrotic": 0,
+            "poison": 0,
+            "force": 0,
+            "psychic": 0
+          },
+          "resistance": {
+            "physical": 0,
+            "radiant": 0,
+            "fire": 0,
+            "lightning": 0,
+            "thunder": 0,
+            "acid": 0,
+            "cold": 0,
+            "necrotic": 0,
+            "poison": 0,
+            "force": 0,
+            "psychic": 0
+          },
+          "immunities": {
+            "physical": 0,
+            "radiant": 0,
+            "fire": 0,
+            "lightning": 0,
+            "thunder": 0,
+            "acid": 0,
+            "cold": 0,
+            "necrotic": 0,
+            "poison": 0,
+            "force": 0,
+            "psychic": 0
+          },
+          "vulnerability" :{
+            "physical": 0,
+            "radiant": 0,
+            "fire": 0,
+            "lightning": 0,
+            "thunder": 0,
+            "acid": 0,
+            "cold": 0,
+            "necrotic": 0,
+            "poison": 0,
+            "force": 0,
+            "psychic": 0
+          },
+          "burning": {
+            "physical": "",
+            "radiant": "",
+            "fire": "",
+            "lightning": "",
+            "thunder": "",
+            "acid": "",
+            "cold": "",
+            "necrotic": "",
+            "poison": "",
+            "force": "",
+            "psychic": ""
+          },
+          "temporary":{
+            "current": false,
+            "success": false,
+            "critical": 0,
+            "rawMargin": 0,
+            "defense": "",
+            "ability": "",
+            "skill1": "",
+            "skill2": "",
+            "selfrawmargin":0
+          },
+          "status" : {
+            "blinded":0,
+            "charmed": 0,
+            "deafened": 0,
+            "diseased":0,
+            "frightened": 0,
+            "grappled": 0,
+            "incapacitated": 0,
+            "invisible": 0,
+            "paralyzed": 0,
+            "petrified": 0,
+            "poisoned": 0,
+            "prone": 0,
+            "restrained": 0,
+            "stunned": 0,
+            "unconscious": 0,
+            "clumsy":0,
+            "marked": 0,
+            "pained": 0,
+            "slowed": 0,
+            "stopped": 0,  
+            "weaken": 0,
+            "mad": 0,
+            "drugged": 0,
+            "infected": 0,
+            "withdrawal": 0,
+            "cursed": 0,
+            "adv": 0,
+            "exhaustion": 0,
+            "hidden":0,
+            "cover":0,
+            "delay":0,
+            "all":0
+          },
+          "other": {
+            "healing":0,
+            "concentrationBonus":0,
+            "concentration":[]
+          }      
+        }    
+      }
+    },
+    "htmlFields": ["biography.value", "biography.public"],
+    "character": {
+      "templates": ["common"],
+      "attributes": {
+        "resources": {
+          "inspiration": true,
+          "confidence" : {
+            "value":0,
+            "max":0
+          },
+          "destin": 0,
+          "famous": 0
+        },
+        "xp": 0,
+        "home": {
+          "xp":0,
+          "properties" :{}
+        }
+      }
+    },
+    "npc": {
+      "templates": ["common"],
+      "isFollower":false,
+      "isIdentified":true,
+      "unidentified": "",
+      "attributes": {
+        "environment": "",
+        "cr": 1,
+        "resources": {
+          "legact" : {
+            "value":0,
+            "max":1
+          },
+          "lair" : {
+            "value":0,
+            "max":1
+          },
+          "legres" : {
+            "value":0,
+            "max":1
+          }       
+        }
+      }
+    }
+  },
+  "Item": {
+    "types": ["weapon", "equipment", "consumable", "loot", "spell", "feat", "backpack", "armor"],
+    "templates": {
+      "itemDescription": {
+        "description": {
+          "value": "",
+          "unidentified": ""
+        },
+		    "subtype": "",
+        "properties": {},
+        "requirements": {}
+      },
+      "physicalItem": {
+        "physicalItem": {
+          "quantity": 1,
+          "weight": 0,
+          "price": 0,
+          "attuned": false,
+          "attunement": false,
+          "equipped": false,
+          "home": false,
+          "material": "",
+          "quality": {
+            "material":0,
+            "craft":1,
+            "magie":0
+          },
+          "identified": true,
+          "broken": false
+        }
+      },
+      "action": {
+        "action": {
+          "activation": "",
+          "ability": null,
+          "skill1": null,
+          "skill2": null,
+          "passiveAbility": null,
+          "passiveSkill": null,
+          "actionType": null,
+          "delay":0,
+          "attackBonus": 0,
+          "damage": {
+            "parts" :[]
+          },
+          "formula": "",
+          "duration": {
+            "value": null,
+            "units": "",
+            "concentration": false
+          },
+          "target": {
+            "value": null,
+            "width": null,
+            "type": ""
+          },
+          "range": {
+            "value": null,
+            "long": false,
+            "units": ""
+          },
+          "uses": {
+            "value": 0,
+            "max": 0,
+            "per": null
+          }
+        }
+      }                         
+    },
+    "htmlFields": ["description.value", "description.unidentified"],
+    "armor": {
+      "templates": ["itemDescription", "physicalItem", "action"]
+    },
+    "backpack": {
+      "templates": ["itemDescription", "physicalItem"],
+      "capacity": {
+        "type": "weight",
+        "value": 0,
+        "weightless": false
+      }
+    },
+    "consumable": {
+      "templates": ["itemDescription", "physicalItem", "action"]
+    },
+    "equipment": {
+      "templates": ["itemDescription", "physicalItem", "action"]
+    },
+    "feat": {
+      "templates": ["itemDescription"],
+      "learning": {
+        "value": 1,
+        "frequencymax": 0,
+        "frequency": 1,
+        "discrepancy":false
+      }
+    },
+    "loot": {
+      "templates": ["itemDescription", "physicalItem"]
+    },
+    "spell": {
+      "templates": ["itemDescription", "action"],
+      "action":{
+        "level": 1,
+        "mpcost": 1
+      },
+      "components": {
+        "vocal": false,
+        "somatic": false,
+        "quantity": 0
+      },
+      "learning": {
+        "learnt": false,
+        "score": 0,
+        "xp": 0,
+        "properties": {}
+      }
+    },
+    "weapon": {
+      "templates": ["itemDescription", "physicalItem", "action"]
+    }
+  }
+}
